@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Officina Lario | Ceramiche e tessuti fatti a mano sul lago</title>
+<meta name="description" content="Officina Lario: bottega di ceramiche e tessuti di fantasia fatti a mano. Sfoglia il negozio online, spedizioni in tutta Italia o ritiro in bottega.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#F6EEDF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F6EEDF;--cream2:#EFE3CE;--ink:#241F1C;--ink2:#5A4F47;--cobalt:#1F3FBF;--ocra:#E0A030;--rosa:#D9A0A0;--rosa2:#B4636B;--ease:cubic-bezier(.22,1,.36,1);--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{overflow-x:clip}
+body{background:var(--cream);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+em{font-style:italic;color:var(--cobalt)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rosa2)}
+.eyebrow::before{content:"";width:26px;height:10px;background:radial-gradient(circle at 5px 5px,currentColor 3px,transparent 3.5px) 0 0/13px 10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.6rem;border-radius:999px;font-weight:700;text-decoration:none;background:var(--cobalt);color:#fff;transition:transform .35s var(--ease),background .3s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg);background:#16309a}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s}
+header.sc{background:rgba(246,238,223,.94);box-shadow:0 1px 0 rgba(36,31,28,.12);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}
+.logo{font-family:var(--serif);font-size:1.6rem;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo i{width:26px;height:26px;border-radius:60% 40% 55% 45%/50% 60% 40% 50%;background:var(--cobalt);display:inline-block;box-shadow:8px 4px 0 -2px var(--ocra)}
+nav ul{display:flex;gap:1.8rem;list-style:none}
+nav a{text-decoration:none;font-weight:500;padding:.5rem 0;position:relative}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+nav a:hover::after{transform:scaleX(1)}
+.tools{display:flex;gap:.4rem;align-items:center}
+.cartbtn{position:relative;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--cream)}
+.cartbtn svg{width:22px;height:22px}
+.badge{position:absolute;top:-4px;right:-4px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:var(--ocra);color:var(--ink);font-size:.78rem;font-weight:700;display:grid;place-items:center;transform:scale(0)}
+.badge.on{transform:scale(1)}
+.badge.bump{animation:bump .6s var(--ease)}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.7) translateY(-6px)}60%{transform:scale(.85)}100%{transform:scale(1)}}
+.burger{display:none;width:48px;height:48px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--ink);place-items:center}
+.burger span,.burger span::before{display:block;width:20px;height:2px;background:var(--ink);position:relative;transition:transform .3s var(--ease)}
+.burger span::before{content:"";position:absolute;top:6px;left:0}
+.burger[aria-expanded=true] span{transform:translateY(3px) rotate(45deg)}
+.burger[aria-expanded=true] span::before{transform:translateY(-6px) rotate(-90deg);top:6px}
+/* hero */
+.hero{padding:120px 0 70px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);margin:1rem 0 1.4rem}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.hero h1 .w span{display:inline-block;transform:translateY(105%);animation:up 1s var(--ease) forwards;animation-delay:calc(var(--i)*.09s + .1s)}
+@keyframes up{to{transform:none}}
+.hero p.lead{max-width:34ch;font-size:1.2rem;color:var(--ink2)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.fade{opacity:0;animation:fadein 1s .7s var(--ease) forwards}
+@keyframes fadein{to{opacity:1}}
+.arch{position:relative;justify-self:center;width:min(440px,100%)}
+.arch .plx{will-change:transform}
+.arch .a{border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:4/5;background:var(--cream2)}
+.arch .a img{width:100%;height:100%;object-fit:cover}
+.blob{position:absolute;width:44%;aspect-ratio:1;left:-16%;bottom:-6%;border-radius:58% 42% 50% 50%/45% 55% 45% 55%;overflow:hidden;border:6px solid var(--cream);box-shadow:0 0 0 0 transparent}
+.blob img{width:100%;height:100%;object-fit:cover}
+.stamp{position:absolute;right:-8%;top:6%;width:120px;height:120px;border-radius:50%;background:var(--ocra);display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:1.15rem;line-height:1.05;transform:rotate(12deg);animation:spin 24s linear infinite}
+.stamp b{display:block;font-weight:400;font-style:italic}
+@keyframes spin{to{transform:rotate(372deg)}}
+.dot1{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--rosa);top:-14px;left:12%;z-index:-1}
+/* marquee */
+.marq{background:var(--cobalt);color:var(--cream);overflow:hidden;padding:1rem 0;transform:rotate(-1.2deg);margin:20px -20px 0}
+.marq .tr{display:flex;width:max-content;animation:mq 30s linear infinite}
+.marq span{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.6rem);padding-right:1.5rem;white-space:nowrap;display:flex;align-items:center;gap:1.5rem}
+.marq span::after{content:"";width:16px;height:16px;border-radius:50% 50% 50% 0;background:var(--ocra);flex:none}
+.marq span:nth-child(even){font-style:italic;color:var(--rosa)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* shop */
+section{padding:clamp(70px,10vw,130px) 0}
+.shophead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.5rem}
+.shophead h2{margin-top:.6rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem}
+.filters button{min-height:44px;padding:.5rem 1.2rem;border-radius:999px;font-weight:500;box-shadow:inset 0 0 0 2px var(--ink);transition:background .3s,color .3s,transform .3s var(--ease)}
+.filters button:hover{transform:translateY(-2px)}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px)}
+.card{position:relative;display:flex;flex-direction:column;transition:opacity .4s,transform .5s var(--ease)}
+.card.out{opacity:0;transform:scale(.92)}
+.card[hidden]{display:none}
+.ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--c,var(--cream2));border-radius:var(--r);perspective:800px}
+.card:nth-child(4n+1){--r:46% 54% 40% 60%/50% 44% 56% 50%}
+.card:nth-child(4n+2){--r:30px 30px 30px 120px}
+.card:nth-child(4n+3){--r:120px 30px 30px 30px}
+.card:nth-child(4n){--r:50% 50% 30px 30px}
+.ph .l{position:absolute;inset:-6%;background-repeat:no-repeat;transition:transform .8s var(--ease),opacity .6s}
+.ph .l.b{opacity:0;transform:rotate(8deg) scale(1.1)}
+.card:hover .l.a,.card:focus-within .l.a{transform:rotate(-7deg) scale(1.2);opacity:0}
+.card:hover .l.b,.card:focus-within .l.b{opacity:1;transform:rotate(0) scale(1)}
+.tag{position:absolute;top:6px;left:6px;z-index:2;border:1.5px solid var(--ink);padding:.2rem .7rem;border-radius:999px;background:var(--cream);font-size:.78rem;font-weight:700}
+.card h3{font-size:1.5rem;margin-top:1rem}
+.card .m{color:var(--ink2);font-size:.95rem}
+.row{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.7rem}
+.price{font-family:var(--serif);font-size:1.4rem}
+.add{min-height:44px;padding:.4rem 1rem;border-radius:999px;background:var(--cobalt);color:#fff;font-weight:700;font-size:.92rem;transition:transform .3s var(--ease),background .3s}
+.add:hover{background:#16309a;transform:scale(1.06)}
+.add.ok{background:var(--ocra);color:var(--ink)}
+/* story */
+.story{background:var(--cream2);border-radius:60px 60px 0 0}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:70px;gap:14px}
+.mosaic figure{overflow:hidden;background:var(--cream)}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.08) rotate(1.5deg)}
+.m1{grid-column:1/5;grid-row:1/6;border-radius:200px 200px 24px 24px}
+.m2{grid-column:5/7;grid-row:2/5;border-radius:50% 50% 50% 50%/40% 40% 60% 60%}
+.m3{grid-column:1/3;grid-row:6/9;border-radius:24px 24px 24px 100px}
+.m4{grid-column:3/7;grid-row:5/9;border-radius:24px 100px 24px 24px}
+.story h2{margin:.7rem 0 1.4rem}
+.story p{color:var(--ink2);margin-bottom:1rem;max-width:52ch}
+.sign{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--cobalt);margin-top:1.4rem}
+.vals{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem;list-style:none}
+.vals li{padding:.4rem 1rem;border-radius:999px;font-weight:500;font-size:.95rem}
+.vals li:nth-child(1){background:var(--rosa)}.vals li:nth-child(2){background:var(--ocra)}.vals li:nth-child(3){background:var(--cobalt);color:#fff}
+/* ship */
+.ship{background:var(--cream2);padding-top:0}
+.ship h2{margin:.7rem 0 2.2rem;max-width:16ch}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc2{padding:2rem;border-radius:32px;position:relative;overflow:hidden;transition:transform .5s var(--ease)}
+.sc2:hover{transform:translateY(-6px) rotate(-.6deg)}
+.sc2:nth-child(1){background:var(--cobalt);color:#fff}
+.sc2:nth-child(2){background:var(--ocra)}
+.sc2:nth-child(3){background:var(--rosa)}
+.sc2 h3{font-size:1.9rem;margin-bottom:.6rem}
+.sc2 .n{font-family:var(--serif);font-size:4rem;line-height:1;opacity:.35;display:block}
+.sc2 p{font-size:1rem}
+.sc2 .ln{margin-top:1rem;font-weight:700}
+/* footer */
+footer{background:var(--ink);color:var(--cream);padding:70px 0 100px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem}
+footer h2{font-size:clamp(2rem,4vw,3rem)}
+footer h3{font-family:var(--sans);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ocra);margin-bottom:.7rem;font-weight:700}
+footer p,footer li{color:#D6CBBB;font-size:1rem;list-style:none}
+footer a{text-decoration:none;padding:.3rem 0;display:inline-block}
+footer a:hover{color:#fff;text-decoration:underline}
+.small{grid-column:1/-1;border-top:1px solid #4a423b;padding-top:1.4rem;font-size:.88rem;color:#A99D8E}
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(36,31,28,.5);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;z-index:90}
+.ov.on{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--cream);z-index:100;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .55s var(--ease);border-radius:32px 0 0 32px;visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.5rem;border-bottom:2px dotted var(--ink)}
+.dh h2{font-size:2rem}
+.x{width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--ink);font-size:1.3rem;line-height:1;display:grid;place-items:center;transition:transform .4s var(--ease)}
+.x:hover{transform:rotate(90deg)}
+.items{flex:1;overflow:auto;padding:1rem 1.5rem;list-style:none}
+.it{display:grid;grid-template-columns:72px 1fr auto;gap:.9rem;align-items:center;padding:.9rem 0;border-bottom:1px solid rgba(36,31,28,.12);animation:fadein .5s var(--ease) forwards;opacity:0}
+.it .th{width:72px;height:72px;border-radius:20px;background-repeat:no-repeat}
+.it b{font-family:var(--serif);font-weight:400;font-size:1.15rem;display:block;line-height:1.15}
+.it small{color:var(--ink2)}
+.q{display:inline-flex;align-items:center;gap:.2rem;margin-top:.3rem}
+.q button{width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink);font-weight:700}
+.q button:hover{background:var(--ink);color:var(--cream)}
+.q span{min-width:28px;text-align:center;font-weight:700}
+.rm{font-size:.85rem;text-decoration:underline;color:var(--ink2);min-height:44px;padding:0 .3rem}
+.empty{text-align:center;padding:3rem 1rem;color:var(--ink2)}
+.empty b{display:block;font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--ink);margin-bottom:.4rem}
+.df{padding:1.3rem 1.5rem 1.6rem;border-top:2px dotted var(--ink);background:var(--cream2)}
+.tot{display:flex;justify-content:space-between;font-family:var(--serif);font-size:1.7rem}
+.note{font-size:.88rem;color:var(--ink2);margin:.3rem 0 1rem}
+.bar{height:8px;border-radius:4px;background:rgba(36,31,28,.12);overflow:hidden;margin:.4rem 0 .2rem}
+.bar i{display:block;height:100%;background:var(--ocra);transform-origin:left;transition:transform .6s var(--ease)}
+.df .btn{width:100%}
+.df .btn[disabled]{opacity:.45;pointer-events:none}
+.done{position:absolute;inset:0;background:var(--cobalt);color:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;gap:1rem;border-radius:32px 0 0 32px}
+.done.on{display:flex;animation:fadein .5s forwards}
+.done h2{font-size:2.6rem}
+.done .btn{background:var(--ocra);color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--ink);color:var(--cream);padding:.8rem 1.3rem;border-radius:999px;z-index:120;transition:transform .5s var(--ease);font-weight:500;max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0)}
+.rv.card.out{opacity:0;transform:scale(.92)}
+/* label */
+.ubg{position:fixed;right:14px;bottom:14px;z-index:130;display:flex;align-items:center;background:rgba(255,255,255,.96);color:#222;font:500 12px/1 system-ui,sans-serif;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.ubg a{padding:12px 6px 12px 14px;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.ubg button{width:44px;height:44px;font-size:16px;color:#555}
+/* reveal */
+.rv{opacity:0;transform:translateY(34px) rotate(1deg);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+.rv.in{opacity:1;transform:none}
+@media (max-width:980px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .hero .wrap,.story .wrap{grid-template-columns:1fr}
+ .arch{margin-top:1.5rem;margin-right:6%}
+ .sg{grid-template-columns:1fr}
+ footer .wrap{grid-template-columns:1fr 1fr}
+ footer .wrap>div:first-child{grid-column:1/-1}
+}
+@media (max-width:820px){
+ .burger{display:grid}
+ nav{position:fixed;inset:72px 0 auto;background:var(--cream);padding:1rem 20px 1.6rem;transform:translateY(-120%);transition:transform .5s var(--ease);box-shadow:0 20px 30px rgba(0,0,0,.1);visibility:hidden}
+ nav.on{transform:none;visibility:visible}
+ nav ul{flex-direction:column;gap:0}
+ nav a{display:block;padding:.9rem 0;font-family:var(--serif);font-size:1.6rem}
+}
+@media (max-width:560px){
+ .stamp{width:96px;height:96px;font-size:.95rem;right:-4%}
+ .card h3{font-size:1.2rem}.price{font-size:1.15rem}
+ .row{flex-direction:column;align-items:flex-start}
+ .add{width:100%}
+ .mosaic{grid-auto-rows:44px;gap:10px}
+ footer .wrap{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .rv,.fade{opacity:1;transform:none}
+ .hero h1 .w span{transform:none}
+ .marq .tr{width:auto;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<header id="hd">
+ <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="Officina Lario, inizio pagina"><i></i>Officina Lario</a>
+  <nav id="nav" aria-label="Principale">
+   <ul>
+    <li><a href="#negozio">Negozio</a></li>
+    <li><a href="#bottega">La bottega</a></li>
+    <li><a href="#spedizioni">Spedizioni e ritiro</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+   </ul>
+  </nav>
+  <div class="tools">
+   <button class="cartbtn" id="cartBtn" aria-label="Apri il carrello" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11H6.2L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+    <span class="badge" id="badge" aria-hidden="true">0</span>
+   </button>
+   <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow fade">Bottega sul lago di Como</span>
+   <h1 aria-label="Ceramiche e tessuti che sanno di casa">
+    <span class="w" aria-hidden="true"><span style="--i:0">Ceramiche</span></span>
+    <span class="w" aria-hidden="true"><span style="--i:1">e</span></span>
+    <span class="w" aria-hidden="true"><span style="--i:2"><em>tessuti</em></span></span>
+    <span class="w" aria-hidden="true"><span style="--i:3">che</span></span>
+    <span class="w" aria-hidden="true"><span style="--i:4">sanno</span></span>
+    <span class="w" aria-hidden="true"><span style="--i:5">di</span></span>
+    <span class="w" aria-hidden="true"><span style="--i:6">casa.</span></span>
+   </h1>
+   <p class="lead fade">Vasi, ciotole e lini stampati a mano, uno alla volta, nel nostro laboratorio sul lungolago. Ogni pezzo è un po' diverso dall'altro, ed è il bello.</p>
+   <div class="cta fade">
+    <a class="btn" href="#negozio">Entra nel negozio</a>
+    <a class="btn ghost" href="#bottega">Conosci la bottega</a>
+   </div>
+  </div>
+  <div class="arch fade">
+   <span class="dot1" aria-hidden="true"></span>
+   <div class="plx" id="plx">
+    <div class="a"><img src="/img/negozio-900.webp" width="900" height="1125" fetchpriority="high" alt="Interno luminoso della bottega Officina Lario con mensole di ceramiche, lini piegati e vista sul lago"></div>
+    <div class="blob"><img src="/img/negozio-dettaglio-700.webp" width="700" height="700" alt="Mani che chiudono un pacco in carta kraft con cordino e cartellino" loading="lazy"></div>
+    <div class="stamp" aria-hidden="true"><span>fatto<b>a mano</b>sul lago</span></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="marq" aria-hidden="true"><div class="tr" id="mq"></div></div>
+
+<section id="negozio">
+ <div class="wrap">
+  <div class="shophead">
+   <div class="rv"><span class="eyebrow">Negozio online</span><h2>Scegli il tuo <em>pezzo</em></h2></div>
+   <div class="filters rv" role="group" aria-label="Filtra per categoria" id="filters">
+    <button type="button" data-f="tutti" aria-pressed="true">Tutti</button>
+    <button type="button" data-f="Ceramiche" aria-pressed="false">Ceramiche</button>
+    <button type="button" data-f="Tessuti" aria-pressed="false">Tessuti</button>
+    <button type="button" data-f="Casa" aria-pressed="false">Per la casa</button>
+   </div>
+  </div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+ </div>
+</section>
+
+<section class="story" id="bottega">
+ <div class="wrap">
+  <div class="mosaic">
+   <figure class="m1 rv"><img src="/img/negozio-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Il banco di legno della bottega con ciotola cobalto, limoni e lini piegati" style="object-position:62% 50%"></figure>
+   <figure class="m2 rv" style="--d:1"><img src="/img/negozio-600.webp" width="600" height="750" loading="lazy" alt="Ceramiche e tessuti esposti sulle mensole di legno"></figure>
+   <figure class="m3 rv" style="--d:2"><img src="/img/negozio-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Confezione di un ordine con carta kraft e cordino" style="object-position:30% 50%"></figure>
+   <figure class="m4 rv" style="--d:3"><img src="/img/negozio-wide-700.webp" width="700" height="467" loading="lazy" alt="Vasi e brocche in ceramica chiara davanti alla finestra sul lago"></figure>
+  </div>
+  <div>
+   <span class="eyebrow rv">La nostra storia</span>
+   <h2 class="rv" style="--d:1">Nata da un tornio e da un <em>telaio</em> in cucina</h2>
+   <p class="rv" style="--d:2">Officina Lario comincia con due passioni che non c'entravano niente l'una con l'altra: l'argilla e i tessuti stampati a mano. Il laboratorio si è ingrandito, ma il metodo è rimasto lo stesso, pochi pezzi per volta, senza fretta.</p>
+   <p class="rv" style="--d:3">Le ceramiche si smaltano una a una e cambiano leggermente da una fornata all'altra. I lini sono stampati con blocchi di legno intagliati a mano, con motivi ispirati ai fiori e all'acqua del lago. Quello che vedi nel negozio è quello che si fa in bottega.</p>
+   <ul class="vals rv" style="--d:4"><li>Pezzi unici</li><li>Materiali naturali</li><li>Imballo senza plastica</li></ul>
+   <p class="sign rv" style="--d:5">Le ragazze dell'Officina</p>
+  </div>
+ </div>
+</section>
+
+<section class="ship" id="spedizioni">
+ <div class="wrap">
+  <span class="eyebrow rv">Spedizioni e ritiro</span>
+  <h2 class="rv" style="--d:1">Arriva a casa, <em>intero</em></h2>
+  <div class="sg">
+   <div class="sc2 rv"><span class="n">01</span><h3>Spedizione in Italia</h3><p>Imballo in carta e cartone riciclato, ceramiche protette una per una. Corriere tracciato con consegna in pochi giorni lavorativi.</p><p class="ln">Gratuita per ordini sopra 90 €</p></div>
+   <div class="sc2 rv" style="--d:1"><span class="n">02</span><h3>Ritiro in bottega</h3><p>Ordini online e passi a ritirare quando vuoi, con un caffè sul lungolago. Ti avvisiamo appena il pacco è pronto.</p><p class="ln">Sempre gratuito</p></div>
+   <div class="sc2 rv" style="--d:2"><span class="n">03</span><h3>Pacco regalo</h3><p>Carta kraft, cordino e cartellino scritto a mano con il tuo messaggio. Ci pensiamo noi, tu dici solo per chi è.</p><p class="ln">Incluso, su richiesta</p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer id="contatti">
+ <div class="wrap">
+  <div>
+   <h2>Passa a trovarci,<br><em style="color:var(--rosa)">la porta è aperta.</em></h2>
+  </div>
+  <div>
+   <h3>Bottega</h3>
+   <ul><li>Via dei Lavandai 12</li><li>22017 Menaggio (CO)</li><li><a href="tel:+390000000000">+39 000 000 0000</a></li></ul>
+  </div>
+  <div>
+   <h3>Orari</h3>
+   <ul><li>Martedì - Sabato: 10-13 / 15-19</li><li>Domenica: 10-13</li><li>Lunedì chiuso</li></ul>
+  </div>
+  <p class="small">Officina Lario è un'attività di fantasia: questa pagina è una dimostrazione. Nessun ordine viene inviato e nessun dato viene raccolto.</p>
+ </div>
+</footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dt" aria-hidden="true">
+ <div class="dh"><h2 id="dt">Il tuo carrello</h2><button class="x" id="closeCart" aria-label="Chiudi il carrello">&times;</button></div>
+ <ul class="items" id="items"></ul>
+ <div class="df">
+  <div class="tot"><span>Totale</span><span id="total">0,00 €</span></div>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+  <p class="note" id="shipnote"></p>
+  <button class="btn" id="checkout" disabled>Concludi l'ordine (demo)</button>
+ </div>
+ <div class="done" id="done" role="status">
+  <h2>Grazie!</h2>
+  <p>Questa è una dimostrazione: nessun ordine è stato inviato e nessun pagamento è stato effettuato. Nel sito vero qui arriva la conferma via email.</p>
+  <button class="btn" id="doneBtn">Torna al negozio</button>
+ </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="ubg" id="ubg"><a href="/siti-web-negozi/">Anteprima realizzata da UBG Media</a><button type="button" id="ubgx" aria-label="Chiudi l'etichetta">&times;</button></div>
+
+<script>
+(function(){
+"use strict";
+var RM=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var IMG="/img/negozio-wide-1200.webp";
+/* fx,fy = punto focale sulla foto; z = zoom */
+var P=[
+ {id:1,n:"Vaso Bianco Lago",c:"Ceramiche",m:"Ceramica smaltata a mano",p:48,fx:.40,fy:.68,z:3,bg:"#E9DCC4",t:"Novità",a:{fx:.4,fy:.5,z:4.5}},
+ {id:2,n:"Ciotola Cobalto",c:"Ceramiche",m:"Gres smaltato, Ø 14 cm",p:26,fx:.73,fy:.75,z:4.5,bg:"#D5DDF3",t:"",a:{fx:.75,fy:.72,z:6}},
+ {id:3,n:"Tovaglioli Onda, set da 4",c:"Tessuti",m:"Lino stampato a mano",p:38,fx:.90,fy:.66,z:3.5,bg:"#D5DDF3",t:"Best seller",a:{fx:.9,fy:.62,z:5}},
+ {id:4,n:"Brocca Sabbia",c:"Ceramiche",m:"Gres naturale, 1,2 l",p:54,fx:.79,fy:.48,z:3.5,bg:"#EFD9A8",t:"",a:{fx:.79,fy:.44,z:5}},
+ {id:5,n:"Ciotola Fiori Blu",c:"Ceramiche",m:"Decoro dipinto a mano",p:32,fx:.945,fy:.25,z:5,bg:"#F1D9D9",t:"Pezzo unico",a:{fx:.94,fy:.22,z:7}},
+ {id:6,n:"Cesto di Rafia",c:"Casa",m:"Rafia intrecciata a mano",p:42,fx:.95,fy:.88,z:3.5,bg:"#EFD9A8",t:"",a:{fx:.94,fy:.9,z:5}},
+ {id:7,n:"Tagliere di Ulivo",c:"Casa",m:"Legno d'ulivo, olio alimentare",p:36,fx:.84,fy:.56,z:3.5,bg:"#F1D9D9",t:"",a:{fx:.85,fy:.52,z:5}},
+ {id:8,n:"Grembiule Sabbia",c:"Tessuti",m:"Lino lavato, taglia unica",p:64,fx:.66,fy:.52,z:3,bg:"#EFE3CE",t:"Novità",a:{fx:.66,fy:.58,z:4.5}}
+];
+function pos(f){/* fx,fy,z -> background-position su riquadro quadrato */
+ var wx=1/f.z,wy=1.5/f.z;
+ var x=(f.fx-wx/2)/(1-wx),y=(f.fy-wy/2)/(1-wy);
+ x=Math.max(0,Math.min(1,x));y=Math.max(0,Math.min(1,y));
+ return "background-image:url("+IMG+");background-size:"+(f.z*100)+"% auto;background-position:"+(x*100).toFixed(1)+"% "+(y*100).toFixed(1)+"%";
+}
+function eur(n){return n.toFixed(2).replace(".",",")+" €"}
+var $=function(s){return document.querySelector(s)};
+var grid=$("#grid");
+grid.innerHTML=P.map(function(p,i){
+ return '<article class="card rv" data-c="'+p.c+'" style="--d:'+(i%4)+';--c:'+p.bg+'">'+
+ (p.t?'<span class="tag">'+p.t+'</span>':'')+'<div class="ph">'+
+ '<div class="l a" style="'+pos(p)+'" role="img" aria-label="'+p.n+', '+p.m+'"></div>'+
+ '<div class="l b" style="'+pos(p.a)+'" aria-hidden="true"></div></div>'+
+ '<h3>'+p.n+'</h3><p class="m">'+p.m+'</p>'+
+ '<div class="row"><span class="price">'+eur(p.p)+'</span><button class="add" type="button" data-id="'+p.id+'" aria-label="Aggiungi al carrello: '+p.n+'">Aggiungi</button></div></article>';
+}).join("");
+/* marquee */
+var words=["fatto a mano","pezzi unici","lino stampato","ceramica del lago","una fornata alla volta"];
+var one=words.map(function(w){return "<span>"+w+"</span>"}).join("");
+$("#mq").innerHTML=one+one+one+one;
+/* reveal */
+var io=null;
+if("IntersectionObserver" in window&&!RM){
+ io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+ document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+}else document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")});
+/* header + parallax */
+var hd=$("#hd"),plx=$("#plx"),tick=false;
+function onS(){var y=window.scrollY;hd.classList.toggle("sc",y>30);if(!RM&&y<900)plx.style.transform="translateY("+(y*.06)+"px)";tick=false}
+window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(onS)}},{passive:true});onS();
+/* menu mobile */
+var nav=$("#nav"),bg=$("#burger");
+function menu(o){nav.classList.toggle("on",o);bg.setAttribute("aria-expanded",o);bg.setAttribute("aria-label",o?"Chiudi il menu":"Apri il menu")}
+bg.addEventListener("click",function(){menu(!nav.classList.contains("on"))});
+nav.addEventListener("click",function(e){if(e.target.tagName==="A")menu(false)});
+/* filtri */
+$("#filters").addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ document.querySelectorAll("#filters button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+ var f=b.dataset.f,cards=[].slice.call(grid.children);
+ cards.forEach(function(c){c.classList.add("out")});
+ setTimeout(function(){
+  var k=0;
+  cards.forEach(function(c){
+   var show=f==="tutti"||c.dataset.c===f;
+   c.hidden=!show;
+   if(show){c.classList.add("in");c.style.setProperty("--d",k++)}
+  });
+  requestAnimationFrame(function(){cards.forEach(function(c){c.classList.remove("out")})});
+ },RM?0:300);
+});
+/* carrello */
+var cart={},last=null;
+var drawer=$("#drawer"),ov=$("#ov"),items=$("#items"),badge=$("#badge"),toast=$("#toast"),tt;
+function byId(id){return P.filter(function(p){return p.id==id})[0]}
+function render(){
+ var ids=Object.keys(cart),n=0,tot=0;
+ items.innerHTML=ids.length?ids.map(function(id){
+  var p=byId(id),q=cart[id];n+=q;tot+=q*p.p;
+  return '<li class="it"><div class="th" role="img" aria-label="'+p.n+'" style="background-color:'+p.bg+';'+pos({fx:p.fx,fy:p.fy,z:p.z})+'"></div>'+
+  '<div><b>'+p.n+'</b><small>'+eur(p.p)+'</small><div class="q"><button data-a="-" data-id="'+id+'" aria-label="Diminuisci quantità di '+p.n+'">&minus;</button><span aria-live="polite">'+q+'</span><button data-a="+" data-id="'+id+'" aria-label="Aumenta quantità di '+p.n+'">+</button></div></div>'+
+  '<button class="rm" data-a="x" data-id="'+id+'" aria-label="Rimuovi '+p.n+'">Rimuovi</button></li>';
+ }).join(""):'<li class="empty"><b>Il carrello è vuoto</b>Sfoglia il negozio e scegli qualcosa di bello.</li>';
+ $("#total").textContent=eur(tot);
+ $("#checkout").disabled=!n;
+ var left=90-tot;
+ $("#shipnote").textContent=!n?"Spedizione gratuita sopra 90 €.":left>0?"Ti mancano "+eur(left)+" per la spedizione gratuita.":"Spedizione gratuita inclusa.";
+ $("#bar").style.transform="scaleX("+Math.min(1,tot/90)+")";
+ badge.textContent=n;badge.classList.toggle("on",n>0);
+ return n;
+}
+function bump(){badge.classList.remove("bump");void badge.offsetWidth;badge.classList.add("bump")}
+function say(t){toast.textContent=t;toast.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("on")},2200)}
+function open(){last=document.activeElement;drawer.classList.add("on");ov.classList.add("on");drawer.setAttribute("aria-hidden","false");setTimeout(function(){$("#closeCart").focus()},50)}
+function close(){drawer.classList.remove("on");ov.classList.remove("on");drawer.setAttribute("aria-hidden","true");$("#done").classList.remove("on");if(last)last.focus()}
+grid.addEventListener("click",function(e){
+ var b=e.target.closest(".add");if(!b)return;
+ var id=b.dataset.id;cart[id]=(cart[id]||0)+1;render();bump();
+ b.classList.add("ok");b.textContent="Aggiunto";setTimeout(function(){b.classList.remove("ok");b.textContent="Aggiungi"},1200);
+ say(byId(id).n+" è nel carrello");
+});
+items.addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var id=b.dataset.id,a=b.dataset.a;
+ if(a==="+")cart[id]++;else if(a==="-"){cart[id]--;if(cart[id]<1)delete cart[id]}else delete cart[id];
+ render();
+});
+$("#cartBtn").addEventListener("click",open);
+$("#closeCart").addEventListener("click",close);
+ov.addEventListener("click",close);
+document.addEventListener("keydown",function(e){
+ if(e.key==="Escape"){if(drawer.classList.contains("on"))close();else menu(false)}
+ if(e.key==="Tab"&&drawer.classList.contains("on")){
+  var f=[].slice.call(drawer.querySelectorAll("button:not([disabled])")).filter(function(x){return x.offsetParent});
+  if(!f.length)return;var a=f[0],z=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+  else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+ }
+});
+$("#checkout").addEventListener("click",function(){$("#done").classList.add("on");setTimeout(function(){$("#doneBtn").focus()},50)});
+$("#doneBtn").addEventListener("click",function(){cart={};render();close()});
+render();
+$("#ubgx").addEventListener("click",function(){$("#ubg").style.display="none"});
+})();
+</script>
+</body>
+</html>

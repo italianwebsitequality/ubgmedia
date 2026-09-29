@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Rossi &amp; Fontana Ristrutturazioni | Imprese edili sul Lago di Como</title>
+<meta name="description" content="Rossi &amp; Fontana Ristrutturazioni: ristrutturazioni complete, recupero di case in pietra e facciate tra Como e Lecco. Sopralluogo e preventivo scritto.">
+<meta name="theme-color" content="#1f2a24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#e8e6df;--paper2:#dfdcd3;--ink:#1c211e;--ink2:#4a524d;
+  --bosco:#2c4a3a;--bosco-d:#1f2a24;--ocra:#c58f2b;--ocra-d:#8a5f0f;
+  --line:rgba(28,33,30,.22);--line-s:rgba(28,33,30,.1);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --d:"Space Grotesk",system-ui,sans-serif;--b:"Inter Tight",system-ui,sans-serif;
+  --pad:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:400 17px/1.55 var(--b);color:var(--ink);background:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ocra);outline-offset:3px}
+.hero-in>*,.zone>*,.contact>*,.step>*{min-width:0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+/* griglia visibile tipo tavola */
+.grid-bg{background-image:linear-gradient(var(--line-s) 1px,transparent 1px),linear-gradient(90deg,var(--line-s) 1px,transparent 1px);background-size:64px 64px}
+.tag{font:600 12px/1 var(--d);letter-spacing:.14em;text-transform:uppercase;color:var(--ocra-d)}
+.tag b{display:inline-block;border:1px solid currentColor;padding:4px 7px;margin-right:10px;font-weight:600}
+h1,h2,h3{font-family:var(--d);line-height:1.02;letter-spacing:-.02em;font-weight:700}
+h2{font-size:clamp(34px,5.4vw,72px);max-width:16ch}
+.sec{padding:clamp(72px,11vw,140px) 0;border-top:1px solid var(--line);position:relative}
+.sec-head{display:grid;gap:22px;margin-bottom:clamp(36px,6vw,72px)}
+.sec-head p{max-width:52ch;color:var(--ink2)}
+/* progress */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--ocra);transform:scaleX(0);transform-origin:0 50%;z-index:60}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.s{background:rgba(232,230,223,.94);border-color:var(--line);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 19px/1 var(--d);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;place-items:center;width:34px;height:34px;background:var(--bosco);color:var(--paper);font:700 14px var(--d);font-style:normal}
+.logo small{display:block;font:500 11px/1 var(--b);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-top:4px}
+nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+nav a{text-decoration:none;font:500 15px var(--b);padding:12px 0;display:inline-block;position:relative}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--ocra);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--ease)}
+nav a:not(.btn):hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;background:var(--bosco);color:#fff;font:600 15px var(--d);letter-spacing:.02em;text-decoration:none;border:0;cursor:pointer;transition:background .25s,transform .25s var(--ease)}
+.btn:hover{background:var(--bosco-d);transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--paper)}
+.btn.oc{background:var(--ocra);color:#1c211e}
+.btn.oc:hover{background:#d69d36}
+.burger{display:none;width:48px;height:48px;background:none;border:1px solid var(--line);cursor:pointer;position:relative}
+.burger span,.burger span::before{position:absolute;left:13px;right:13px;height:2px;background:var(--ink);transition:transform .3s var(--ease)}
+.burger span{top:23px}.burger span::before{content:"";left:0;right:0;top:-7px}
+.burger[aria-expanded=true] span{transform:rotate(45deg)}
+.burger[aria-expanded=true] span::before{transform:translateY(7px) rotate(-90deg)}
+/* hero */
+.hero{padding:104px 0 0;position:relative}
+.hero-in{display:grid;grid-template-columns:6fr 6fr;gap:clamp(24px,4vw,56px);align-items:end;padding-bottom:clamp(40px,6vw,72px)}
+.hero h1{font-size:clamp(42px,5.6vw,88px);margin:22px 0 26px}
+.hero h1 em{font-style:normal;color:var(--bosco);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.09em;background:var(--ocra)}
+.hero p.lead{max-width:44ch;color:var(--ink2);font-size:19px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+/* slider */
+.cmp{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--bosco-d);touch-action:pan-y;user-select:none;-webkit-user-select:none;--p:50%;cursor:ew-resize;border:1px solid var(--ink)}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .bef{clip-path:inset(0 calc(100% - var(--p)) 0 0);filter:grayscale(.9) contrast(.85) brightness(.82) sepia(.25)}
+.cmp .bef-ov{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0);background:repeating-linear-gradient(135deg,rgba(28,33,30,.16) 0 2px,transparent 2px 9px);pointer-events:none}
+.cmp .aft{filter:saturate(1.12) contrast(1.05)}
+.cmp .lbl{position:absolute;top:14px;font:600 12px var(--d);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;background:var(--ink);color:var(--paper);pointer-events:none}
+.cmp .l1{left:14px}.cmp .l2{right:14px;background:var(--ocra);color:var(--ink)}
+.cmp .hd{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:var(--paper);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--p);width:52px;height:52px;margin:-26px 0 0 -26px;background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;font:700 16px var(--d);pointer-events:none}
+.cmp:focus-visible{outline:3px solid var(--ocra);outline-offset:3px}
+.cmp-cap{display:flex;justify-content:space-between;gap:12px;font:500 12px var(--d);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding-top:10px;border-top:1px solid var(--line);margin-top:0}
+.hero-note{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ink);padding:16px 0;font:500 13px var(--d);letter-spacing:.1em;text-transform:uppercase}
+/* quote strip */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.fact{padding:clamp(24px,4vw,44px) clamp(16px,2.4vw,32px);border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact .n{font:700 clamp(64px,10vw,140px)/.9 var(--d);letter-spacing:-.04em;color:var(--bosco);display:block}
+.fact .n sup{font-size:.35em;vertical-align:top;color:var(--ocra-d);margin-left:4px}
+.fact p{margin-top:14px;max-width:26ch;color:var(--ink2)}
+/* servizi */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ink)}
+.svc article{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:30px 24px 34px 0;border-bottom:1px solid var(--line);transition:background .3s}
+.svc article:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+.svc article:hover{background:var(--paper2)}
+.svc .no{font:600 14px var(--d);color:var(--ocra-d);letter-spacing:.1em;padding-top:6px}
+.svc h3{font-size:clamp(24px,2.6vw,34px);margin-bottom:10px}
+.svc p{color:var(--ink2);max-width:42ch}
+/* lavori */
+.dark{background:var(--bosco-d);color:var(--paper);border-color:var(--bosco-d)}
+.dark .tag{color:var(--ocra)}
+.dark .sec-head p{color:rgba(232,230,223,.72)}
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.w{position:relative;display:flex;flex-direction:column;border:1px solid rgba(232,230,223,.28);background:rgba(232,230,223,.04);overflow:hidden}
+.w .ph{position:relative;overflow:hidden;flex:1;min-height:240px}
+.w .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.w:hover .ph img{transform:scale(1.05)}
+.w .meta{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;padding:18px 20px 22px;border-top:1px solid rgba(232,230,223,.28)}
+.w .meta .id{font:600 12px var(--d);letter-spacing:.14em;color:var(--ocra);grid-row:span 2;padding-top:5px}
+.w h3{font-size:clamp(21px,2vw,27px)}
+.w .zn{font:500 13px var(--b);letter-spacing:.08em;text-transform:uppercase;color:rgba(232,230,223,.65)}
+.w1{grid-column:span 7;min-height:520px}.w2{grid-column:span 5}.w3{grid-column:span 5}.w4{grid-column:span 7}
+.w4 .ph{min-height:300px}
+.works-note{margin-top:24px;font:500 12px var(--d);letter-spacing:.1em;text-transform:uppercase;color:rgba(232,230,223,.55)}
+/* processo */
+.proc{position:relative;display:grid;gap:0;padding-left:clamp(56px,9vw,120px)}
+.rail{position:absolute;left:clamp(17px,3vw,39px);top:6px;bottom:6px;width:2px;background:var(--line)}
+.rail i{position:absolute;inset:0;background:var(--ocra);transform:scaleY(0);transform-origin:50% 0}
+.step{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px 48px;padding:0 0 clamp(44px,7vw,84px)}
+.step:last-child{padding-bottom:0}
+.step .dot{position:absolute;left:calc(-1*clamp(56px,9vw,120px) + clamp(17px,3vw,39px) - 11px);top:6px;width:24px;height:24px;background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.step.on .dot{background:var(--ocra);border-color:var(--ocra)}
+.step .k{font:700 clamp(54px,8vw,110px)/.85 var(--d);color:var(--ink);opacity:.14;letter-spacing:-.04em;transition:opacity .5s,color .5s}
+.step.on .k{opacity:1;color:var(--bosco)}
+.step h3{font-size:clamp(26px,3vw,40px);margin-bottom:10px}
+.step p{color:var(--ink2);max-width:44ch}
+.step small{display:inline-block;margin-top:14px;font:600 12px var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--ocra-d)}
+/* zone */
+.zone{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:start}
+.zone ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ink)}
+.zone li{padding:16px 0;border-bottom:1px solid var(--line);font:600 20px var(--d);display:flex;align-items:center;gap:12px}
+.zone li::before{content:"+";color:var(--ocra-d);font-weight:600}
+.zone li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+.map{position:relative;aspect-ratio:1/1;border:1px solid var(--ink);overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .lake{fill:none;stroke:var(--bosco);stroke-width:2;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.4s var(--ease)}
+.map.in .lake{stroke-dashoffset:0}
+.map text{font:600 11px var(--d);letter-spacing:.12em;fill:var(--ink2);text-transform:uppercase}
+.map .pt{fill:var(--ocra)}
+/* contatto */
+.contact{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px)}
+.contact .info p{color:var(--ink2);margin-bottom:22px;max-width:40ch}
+.contact dl{border-top:1px solid var(--ink)}
+.contact dl div{display:grid;grid-template-columns:110px 1fr;padding:14px 0;border-bottom:1px solid var(--line)}
+.contact dt{font:600 12px var(--d);letter-spacing:.14em;text-transform:uppercase;color:var(--ocra-d);padding-top:4px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#f2f0ea;border:1px solid var(--ink);padding:clamp(20px,3vw,36px)}
+form .f{display:grid;gap:6px}
+form .full{grid-column:1/-1}
+label{font:600 12px var(--d);letter-spacing:.12em;text-transform:uppercase}
+input,select,textarea{font:400 17px var(--b);min-height:48px;padding:10px 12px;background:var(--paper);border:1px solid var(--ink);border-radius:0;color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ocra);outline-offset:1px}
+.chk{display:flex;gap:10px;align-items:flex-start;font:400 14px/1.4 var(--b);text-transform:none;letter-spacing:0;color:var(--ink2)}
+.chk input{width:22px;min-height:22px;height:22px;margin-top:2px;accent-color:var(--bosco);flex:none}
+.ok{display:none;grid-column:1/-1;padding:20px;border:2px solid var(--bosco);background:#e2ebe3}
+.ok.show{display:block}
+.ok b{font:700 22px var(--d);display:block;margin-bottom:6px}
+footer{background:var(--bosco-d);color:rgba(232,230,223,.75);padding:44px 0 120px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{color:var(--paper);font-family:var(--d)}
+/* reveal a scatti */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s steps(5,end),transform .55s steps(5,end)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.hl{opacity:0;transform:translateY(30px);animation:up .8s steps(6,end) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+/* whatsapp + etichetta */
+.wa{display:none}
+.tagUBG{position:fixed;right:14px;bottom:14px;z-index:70;display:flex;align-items:center;background:#111;color:#fff;font:500 12px/1 system-ui,sans-serif;border-radius:99px;box-shadow:0 4px 18px rgba(0,0,0,.28)}
+.tagUBG a{padding:0 4px 0 14px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:#fff}
+.tagUBG button{width:44px;height:44px;background:none;border:0;color:#bbb;font-size:18px;cursor:pointer;border-radius:99px}
+.tagUBG.x{display:none}
+@media(max-width:900px){
+  .burger{display:block}
+  nav ul{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--ink);padding:8px var(--pad) 22px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+  nav ul.open{opacity:1;transform:none;visibility:visible}
+  nav li a{width:100%;padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
+  nav li:last-child a{border:0;margin-top:14px}
+  .hero-in,.zone,.contact{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:1fr}
+  .fact{border-left:0;border-top:1px solid var(--line);padding-left:0}.fact:first-child{border-top:0}
+  .svc{grid-template-columns:1fr}.svc article:nth-child(even){padding-left:0;border-left:0}
+  .svc article{grid-template-columns:44px 1fr}
+  .w1,.w2,.w3,.w4{grid-column:1/-1;min-height:0}.w1 .ph{min-height:320px}
+  .step{grid-template-columns:1fr}.step .k{font-size:56px}
+  form{grid-template-columns:1fr}
+  .wa{display:flex;position:fixed;left:14px;bottom:14px;z-index:70;min-height:48px;padding:0 18px;align-items:center;gap:8px;background:#1f7a4a;color:#fff;font:600 15px var(--d);text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,.28)}
+  .tagUBG a{padding-left:12px;font-size:11px}
+}
+@media(max-width:420px){.tagUBG a{max-width:150px;line-height:1.15;padding:6px 0 6px 12px}.hero h1{font-size:42px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .rv,.hl{opacity:1;transform:none}
+  .map .lake{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<header id="hd">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Rossi &amp; Fontana Ristrutturazioni, inizio pagina"><i>R&amp;F</i><span>Rossi &amp; Fontana<small>Ristrutturazioni</small></span></a>
+    <nav aria-label="Principale">
+      <button class="burger" id="bg" aria-expanded="false" aria-controls="mn" aria-label="Apri il menu"><span></span></button>
+      <ul id="mn">
+        <li><a href="#lavori">Lavori</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#metodo">Come lavoriamo</a></li>
+        <li><a href="#zone">Zone</a></li>
+        <li><a class="btn" href="#sopralluogo">Richiedi sopralluogo</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero grid-bg">
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <p class="tag hl"><b>TAV. 01</b>Imprese edili sul Lago di Como</p>
+        <h1 class="hl" style="animation-delay:.12s">Da cantiere grezzo a casa <em>finita</em>.</h1>
+        <p class="lead hl" style="animation-delay:.24s">Ristrutturazioni complete, recupero di case in pietra e facciate tra Como e Lecco. Un solo referente dal sopralluogo alla consegna delle chiavi.</p>
+        <div class="cta hl" style="animation-delay:.36s">
+          <a class="btn oc" href="#sopralluogo">Richiedi un sopralluogo</a>
+          <a class="btn o" href="#lavori">Guarda i lavori</a>
+        </div>
+      </div>
+      <div class="hl" style="animation-delay:.2s">
+        <div class="cmp" id="cmp" role="slider" tabindex="0" aria-label="Confronto prima e dopo: trascina per scoprire il lavoro finito" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="aft" src="/img/edilizia-wide-1200.webp" srcset="/img/edilizia-wide-700.webp 700w,/img/edilizia-wide-1200.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="Cantiere di recupero di una casa in pietra con vista sul lago all'alba" fetchpriority="high">
+          <img class="bef" src="/img/edilizia-wide-1200.webp" srcset="/img/edilizia-wide-700.webp 700w,/img/edilizia-wide-1200.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="" aria-hidden="true">
+          <div class="bef-ov"></div>
+          <span class="lbl l1">Prima · grezzo</span><span class="lbl l2">Dopo · finito</span>
+          <div class="hd"></div><div class="knob" aria-hidden="true">&lt;&gt;</div>
+        </div>
+        <div class="cmp-cap"><span>Trascina per confrontare</span><span>Illustrazione simbolica</span></div>
+      </div>
+    </div>
+    <div class="hero-note"><span>Como · Lecco · Alto Lario</span><span>Sopralluogo su appuntamento</span><span>Preventivo scritto</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-fatti">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag rv"><b>02</b>Come lavoriamo, in breve</p><h2 id="t-fatti" class="rv d1">Poche cose, fatte come si deve.</h2></div>
+    <div class="facts">
+      <div class="fact rv"><span class="n"><span data-c="1">0</span></span><p>referente unico per tutto il cantiere: sempre lo stesso numero da chiamare.</p></div>
+      <div class="fact rv d1"><span class="n"><span data-c="4">0</span></span><p>fasi chiare, dal sopralluogo alla consegna. Sai sempre a che punto siamo.</p></div>
+      <div class="fact rv d2"><span class="n"><span data-c="100">0</span><sup>%</sup></span><p>del preventivo per iscritto, voce per voce, prima di iniziare.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="servizi" aria-labelledby="t-serv">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag rv"><b>03</b>Servizi</p><h2 id="t-serv" class="rv d1">Dalla struttura alle finiture.</h2><p class="rv d2">Coordiniamo muratori, impiantisti e serramentisti: tu non rincorri nessuno.</p></div>
+    <div class="svc">
+      <article class="rv"><span class="no">A.01</span><div><h3>Ristrutturazione completa</h3><p>Demolizioni, impianti, massetti, pavimenti, bagni e cucine. Casa e appartamenti, dal progetto al collaudo.</p></div></article>
+      <article class="rv d1"><span class="no">A.02</span><div><h3>Recupero case in pietra</h3><p>Consolidamento, rifacimento di tetti e murature a vista, nel rispetto dei materiali del posto.</p></div></article>
+      <article class="rv"><span class="no">A.03</span><div><h3>Facciate e cappotto</h3><p>Intonaci, risanamento dall'umidità e isolamento termico per case che resistono a lago e a montagna.</p></div></article>
+      <article class="rv d1"><span class="no">A.04</span><div><h3>Ampliamenti e bonus edilizi</h3><p>Sopraelevazioni, verande, pratiche edilizie e detrazioni fiscali seguite insieme al tuo tecnico.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="lavori" aria-labelledby="t-lav">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag rv"><b>04</b>Cantieri</p><h2 id="t-lav" class="rv d1">Cantieri che parlano da soli.</h2><p class="rv d2">Ogni scheda racconta tipologia di lavoro e zona. I dettagli li mostriamo di persona, sul posto.</p></div>
+    <div class="works">
+      <article class="w w1 rv"><div class="ph"><img src="/img/edilizia-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Casa in pietra in ristrutturazione con ponteggio e vista sul lago" style="object-position:70% 50%"></div><div class="meta"><span class="id">C-01</span><h3>Recupero casa in pietra</h3><span class="zn">Tremezzina · Alto Lario</span></div></article>
+      <article class="w w2 rv d1"><div class="ph"><img src="/img/edilizia-600.webp" width="600" height="750" loading="lazy" alt="Operaio che stende intonaco su una parete in pietra" style="object-position:50% 30%"></div><div class="meta"><span class="id">C-02</span><h3>Intonaco e murature a vista</h3><span class="zn">Bellagio · Como</span></div></article>
+      <article class="w w3 rv"><div class="ph"><img src="/img/edilizia-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Progetti arrotolati, casco e metro sul tavolo di un cantiere affacciato sul lago"></div><div class="meta"><span class="id">C-03</span><h3>Ristrutturazione completa</h3><span class="zn">Lecco · Lago di Lecco</span></div></article>
+      <article class="w w4 rv d1"><div class="ph"><img src="/img/edilizia-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Cantiere in quota con ponteggio e panorama sul lago" style="object-position:15% 40%"></div><div class="meta"><span class="id">C-04</span><h3>Facciata e ponteggio</h3><span class="zn">Mandello del Lario · Lecco</span></div></article>
+    </div>
+    <p class="works-note">Foto dimostrative del sito: sostituibili con i tuoi cantieri reali.</p>
+  </div>
+</section>
+
+<section class="sec" id="metodo" aria-labelledby="t-met">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag rv"><b>05</b>Metodo</p><h2 id="t-met" class="rv d1">Quattro fasi, nessuna sorpresa.</h2></div>
+    <div class="proc" id="proc">
+      <div class="rail" aria-hidden="true"><i id="rail"></i></div>
+      <div class="step"><span class="dot" aria-hidden="true"></span><div class="k">01</div><div><h3>Sopralluogo</h3><p>Veniamo in cantiere, misuriamo, guardiamo lo stato reale e ascoltiamo cosa vuoi ottenere.</p><small>Su appuntamento</small></div></div>
+      <div class="step"><span class="dot" aria-hidden="true"></span><div class="k">02</div><div><h3>Preventivo</h3><p>Un documento scritto, chiaro, con lavorazioni e materiali voce per voce. Tempi indicati prima di iniziare.</p><small>Per iscritto</small></div></div>
+      <div class="step"><span class="dot" aria-hidden="true"></span><div class="k">03</div><div><h3>Cantiere</h3><p>Squadra ordinata, cantiere pulito, aggiornamenti regolari. Le scelte importanti le condividiamo con te.</p><small>Un solo referente</small></div></div>
+      <div class="step"><span class="dot" aria-hidden="true"></span><div class="k">04</div><div><h3>Consegna</h3><p>Verifica finale insieme, pulizia, documenti e certificazioni. Poi restiamo a disposizione.</p><small>Chiavi in mano</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec grid-bg" id="zone" aria-labelledby="t-zone">
+  <div class="wrap zone">
+    <div>
+      <p class="tag rv"><b>06</b>Zone servite</p>
+      <h2 id="t-zone" class="rv d1" style="margin:22px 0 28px">Dove lavoriamo.</h2>
+      <ul class="rv d2"><li>Como</li><li>Lecco</li><li>Bellagio</li><li>Menaggio</li><li>Varenna</li><li>Mandello</li><li>Tremezzina</li><li>Alto Lario</li></ul>
+    </div>
+    <div class="map rv" id="map" role="img" aria-label="Schema stilizzato del lago di Como con le zone servite">
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="lake" d="M210 40 C 190 90 205 130 190 170 C 175 210 130 250 120 300 C 115 335 125 360 120 380 M210 40 C 235 90 230 130 225 165 C 222 200 255 230 268 270 C 280 310 270 350 285 380 M190 170 C 175 200 205 215 225 165"/>
+        <g class="pt"><circle class="pt" cx="120" cy="372" r="6"/><circle class="pt" cx="285" cy="372" r="6"/><circle class="pt" cx="207" cy="185" r="6"/><circle class="pt" cx="180" cy="90" r="6"/><circle class="pt" cx="238" cy="110" r="6"/><circle class="pt" cx="250" cy="250" r="6"/></g>
+        <text x="132" y="376">Como</text><text x="228" y="376">Lecco</text><text x="216" y="190">Bellagio</text><text x="90" y="92">Menaggio</text><text x="246" y="112">Varenna</text><text x="258" y="254">Mandello</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sopralluogo" aria-labelledby="t-form">
+  <div class="wrap contact">
+    <div class="info">
+      <p class="tag rv"><b>07</b>Contatti</p>
+      <h2 id="t-form" class="rv d1" style="margin:22px 0 22px">Chiedi un sopralluogo.</h2>
+      <p class="rv d2">Raccontaci in due righe il lavoro. Ti richiamiamo per fissare un appuntamento in cantiere, senza impegno.</p>
+      <dl class="rv d2">
+        <div><dt>Telefono</dt><dd><a href="tel:+390000000000">+39 000 000 0000</a></dd></div>
+        <div><dt>Sede</dt><dd>Via del Lavoro 12, 22017 Menaggio (CO)</dd></div>
+        <div><dt>Orari</dt><dd>Lun-Ven 7:30-18:00, sabato su appuntamento</dd></div>
+        <div><dt>P.IVA</dt><dd>00000000000</dd></div>
+      </dl>
+    </div>
+    <form id="fm" class="rv" novalidate>
+      <div class="f"><label for="n">Nome e cognome</label><input id="n" name="n" autocomplete="name" required></div>
+      <div class="f"><label for="t">Telefono</label><input id="t" name="t" type="tel" autocomplete="tel" required></div>
+      <div class="f"><label for="z">Zona del cantiere</label><select id="z" required><option value="">Scegli</option><option>Como</option><option>Lecco</option><option>Bellagio</option><option>Menaggio</option><option>Varenna</option><option>Altra zona</option></select></div>
+      <div class="f"><label for="k">Tipo di lavoro</label><select id="k"><option>Ristrutturazione completa</option><option>Casa in pietra</option><option>Facciata / cappotto</option><option>Ampliamento</option><option>Altro</option></select></div>
+      <div class="f full"><label for="m">Descrivi il lavoro</label><textarea id="m" placeholder="Es. appartamento di 90 mq da rifare, bagno e impianti"></textarea></div>
+      <label class="chk full"><input type="checkbox" required> Acconsento a essere ricontattato (demo: nessun dato viene inviato).</label>
+      <div class="full"><button class="btn" type="submit">Invia la richiesta</button></div>
+      <div class="ok" id="ok" role="status" aria-live="polite"><b>Richiesta ricevuta (DEMO)</b>Questa è un'anteprima: nessun dato è stato inviato. Nel sito reale ti richiameremmo entro il giorno lavorativo successivo.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><div><b>Rossi &amp; Fontana Ristrutturazioni S.r.l.</b><br>Via del Lavoro 12, 22017 Menaggio (CO) · P.IVA 00000000000</div><div>Attività di fantasia a scopo dimostrativo</div></div></footer>
+
+<a class="wa" href="https://wa.me/390000000000" aria-label="Scrivici su WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .200-3.200-.7-2.700-1.100-4.400-3.800-4.500-4-.1-.2-1.100-1.400-1.100-2.700s.7-1.900.9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 1.900c.1.200.1.400 0 .6l-.4.600c-.1.200-.3.400-.1.700.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.400.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l1.800.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>WhatsApp</a>
+
+<div class="tagUBG" id="ubg"><a href="/siti-web-imprese-edili/">Anteprima realizzata da UBG Media</a><button type="button" id="ubgx" aria-label="Chiudi etichetta">&times;</button></div>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var $=function(s){return document.querySelector(s)};
+var hd=$('#hd'),prog=$('#prog'),rail=$('#rail'),proc=$('#proc'),steps=[].slice.call(document.querySelectorAll('.step'));
+/* scroll: header, progresso pagina, linea processo */
+var tick=false;
+function onScroll(){
+  var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hd.classList.toggle('s',y>20);
+  prog.style.transform='scaleX('+(h>0?y/h:0)+')';
+  var r=proc.getBoundingClientRect(),vh=innerHeight,
+      p=Math.min(1,Math.max(0,(vh*.62-r.top)/r.height));
+  rail.style.transform='scaleY('+p+')';
+  steps.forEach(function(s){var t=s.getBoundingClientRect().top;s.classList.toggle('on',t<vh*.62)});
+  tick=false;
+}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+addEventListener('resize',onScroll);onScroll();
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+  if(e.target.id==='map')e.target.classList.add('in');
+  e.target.querySelectorAll('[data-c]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+function count(el){var to=+el.dataset.c;if(rm){el.textContent=to;return}var t0=performance.now(),d=1400;
+  (function f(t){var k=Math.min(1,(t-t0)/d);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
+/* slider prima/dopo */
+var c=$('#cmp'),drag=false;
+function setP(v){v=Math.max(0,Math.min(100,v));c.style.setProperty('--p',v+'%');c.setAttribute('aria-valuenow',Math.round(v))}
+function fromX(x){var r=c.getBoundingClientRect();setP((x-r.left)/r.width*100)}
+c.addEventListener('pointerdown',function(e){drag=true;c.setPointerCapture(e.pointerId);fromX(e.clientX)});
+c.addEventListener('pointermove',function(e){if(drag)fromX(e.clientX)});
+c.addEventListener('pointerup',function(){drag=false});c.addEventListener('pointercancel',function(){drag=false});
+c.addEventListener('keydown',function(e){var v=+c.getAttribute('aria-valuenow');
+  if(e.key==='ArrowLeft'||e.key==='ArrowDown'){setP(v-5);e.preventDefault()}
+  if(e.key==='ArrowRight'||e.key==='ArrowUp'){setP(v+5);e.preventDefault()}});
+if(!rm){var seen=false,io2=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!seen){seen=true;var t0=performance.now();
+  (function f(t){var k=Math.min(1,(t-t0)/1800);if(drag)return;var e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;setP(15+70*Math.sin(e*Math.PI)*0.5+ (35*e));if(k<1)requestAnimationFrame(f)})(t0)}},{threshold:.6});io2.observe(c)}
+/* menu */
+var bg=$('#bg'),mn=$('#mn');
+bg.addEventListener('click',function(){var o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu')});
+mn.addEventListener('click',function(e){if(e.target.tagName==='A'){mn.classList.remove('open');bg.setAttribute('aria-expanded','false')}});
+/* form demo */
+var fm=$('#fm');
+fm.addEventListener('submit',function(e){e.preventDefault();
+  var bad=[].slice.call(fm.querySelectorAll('[required]')).filter(function(i){return i.type==='checkbox'?!i.checked:!i.value.trim()});
+  if(bad.length){bad[0].focus();bad.forEach(function(i){i.style.borderColor='#a33'});return}
+  fm.querySelectorAll('input,select,textarea').forEach(function(i){i.style.borderColor=''});
+  $('#ok').classList.add('show');fm.reset();$('#ok').scrollIntoView({block:'nearest'})});
+/* etichetta */
+$('#ubgx').addEventListener('click',function(){$('#ubg').classList.add('x')});
+})();
+</script>
+</body>
+</html>

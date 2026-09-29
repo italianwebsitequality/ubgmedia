@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#FBF8F3">
+<title>Casa Ortica – B&amp;B boutique sul Lago di Como</title>
+<meta name="description" content="Casa Ortica, B&amp;B boutique affacciato sul lago: poche camere luminose, colazione in terrazza e il lago a due passi. Sito dimostrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF8F3; --sand:#EFE7DA; --sand-2:#DCCFBB; --lake:#9DB4C4; --lake-d:#3E5C73; --ink:#2A2F33; --mute:#5E656A; --line:rgba(42,47,51,.12);
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif; --serif:'Cormorant Garamond',Georgia,serif;
+  --ease:cubic-bezier(.22,.7,.2,1); --r:24px; --barh:0px; --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;overflow-x:hidden;padding-bottom:var(--barh)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+:focus-visible{outline:2px solid var(--lake-d);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gut)}
+section{scroll-margin-top:72px}
+h1,h2,h3{font-weight:300;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.3rem,5.4vw,4.6rem)}
+h2 em{font-size:1.08em}
+.eyebrow{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;color:var(--lake-d)}
+.pad{padding:clamp(80px,12vw,168px) 0}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;height:72px;display:flex;align-items:center;color:#fff;transition:background .5s var(--ease),color .5s var(--ease),box-shadow .5s var(--ease)}
+.hdr.solid{background:rgba(251,248,243,.94);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.7rem;line-height:1;min-height:44px;display:flex;align-items:center}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a.l{padding:0 14px;min-height:44px;display:flex;align-items:center;font-size:.9rem;letter-spacing:.04em;position:relative}
+.nav a.l::after{content:"";position:absolute;left:14px;right:14px;bottom:8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.nav a.l:hover::after{transform:scaleX(1)}
+.lang{display:flex;border:1px solid currentColor;border-radius:99px;padding:2px;margin:0 8px}
+.lang button{min-width:44px;min-height:40px;border-radius:99px;font-size:.78rem;letter-spacing:.12em;font-weight:400;opacity:.75;transition:background .3s,color .3s,opacity .3s}
+.lang button[aria-pressed=true]{background:currentColor;opacity:1}
+.lang button[aria-pressed=true] span{color:var(--bg)}
+.hdr:not(.solid) .lang button[aria-pressed=true] span{color:#2A2F33}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:99px;background:var(--ink);color:var(--bg);font-weight:400;font-size:.92rem;letter-spacing:.04em;transition:transform .5s var(--ease),background .3s}
+.cta:hover{transform:translateY(-2px);background:var(--lake-d)}
+.hdr:not(.solid) .cta{background:#fff;color:var(--ink)}
+.burger{display:none;width:48px;height:48px;align-items:center;justify-content:center;position:relative}
+.burger i{position:absolute;width:24px;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+.burger i:first-child{transform:translateY(-4px)}.burger i:last-child{transform:translateY(4px)}
+.burger[aria-expanded=true] i:first-child{transform:rotate(45deg)}.burger[aria-expanded=true] i:last-child{transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;height:190vh;height:190svh}
+.stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hero-media{position:absolute;inset:0;overflow:hidden;transform-origin:50% 50%;will-change:transform;border-radius:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;animation:zoom 26s ease-in-out infinite alternate}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.12)}}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,40,.38) 0,rgba(20,30,40,0) 30%,rgba(20,30,40,.05) 40%,rgba(20,30,40,.7) 100%)}
+.hero-txt{position:absolute;left:0;right:0;bottom:calc(var(--barh) + 34px);color:#fff;z-index:2;will-change:transform,opacity}
+.hero-txt .eyebrow{color:#fff;margin-bottom:18px;display:block}
+.hero h1{font-size:clamp(3.4rem,11vw,10rem);line-height:.92;text-shadow:0 2px 30px rgba(20,30,40,.35)}
+.hero h1 em{font-size:1.02em}
+.hero-txt p{max-width:34ch;margin-top:22px;font-size:clamp(1.02rem,1.5vw,1.25rem);text-shadow:0 1px 16px rgba(20,30,40,.5)}
+.scrollhint{position:absolute;right:var(--gut);bottom:calc(var(--barh) + 40px);z-index:2;color:#fff;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.scrollhint::after{content:"";width:1px;height:56px;background:#fff;transform-origin:top;animation:drip 2.4s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* booking bar */
+.book{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:45;width:min(940px,calc(100% - 24px));background:rgba(251,248,243,.96);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:0 18px 50px -12px rgba(30,45,60,.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:10px}
+.book form{display:grid;grid-template-columns:1fr 1fr 1fr auto auto;align-items:stretch;gap:6px}
+.fld{display:flex;flex-direction:column;justify-content:center;padding:6px 16px;border-radius:14px;min-height:56px;transition:background .3s;position:relative}
+.fld:hover,.fld:focus-within{background:var(--sand)}
+.fld label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lake-d);font-weight:400}
+.fld input,.fld select{background:transparent;border:0;font-size:1rem;font-weight:400;width:100%;min-height:26px;appearance:none;-webkit-appearance:none;cursor:pointer}
+.fld select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.nights{display:flex;flex-direction:column;justify-content:center;padding:0 14px;min-width:82px;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--lake-d);line-height:1.1}
+.nights small{display:block;font-family:var(--sans);font-style:normal;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.book .cta{min-height:56px;border-radius:14px;padding:0 26px}
+.toast{position:absolute;left:0;right:0;bottom:calc(100% + 10px);background:var(--ink);color:#fff;border-radius:16px;padding:14px 46px 14px 20px;font-size:.95rem;line-height:1.5;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.toast.on{opacity:1;transform:none;pointer-events:auto}
+.toast.err{background:#7A3B2E}
+.toast button{position:absolute;right:4px;top:4px;width:44px;height:44px;color:#fff;font-size:1.3rem;line-height:1}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,7vw,120px);align-items:end}
+.intro h2{margin:18px 0 32px}
+.intro p{max-width:52ch;color:var(--mute);font-size:1.08rem}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts li{list-style:none;padding:22px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;font-size:1.12rem}
+.facts b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.5rem;color:var(--lake-d);min-width:2ch}
+
+/* rooms */
+.rooms{background:var(--sand);border-radius:48px 48px 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(36px,5vw,64px);flex-wrap:wrap}
+.head h2{margin-top:14px}
+.arrows{display:flex;gap:10px}
+.arr{width:56px;height:56px;border-radius:50%;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s,opacity .3s}
+.arr:hover:not(:disabled){background:var(--ink);color:var(--bg)}
+.arr:disabled{opacity:.3;cursor:default}
+.arr svg{width:20px;height:20px}
+.track{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;scroll-padding-left:var(--gut)}
+.track::-webkit-scrollbar{display:none}
+.track.drag{scroll-snap-type:none;cursor:grabbing;scroll-behavior:auto}
+.track.drag *{pointer-events:none}
+.room{flex:0 0 clamp(280px,42vw,560px);scroll-snap-align:start;position:relative;user-select:none;-webkit-user-select:none}
+.room .ph{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--sand-2)}
+.room img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);-webkit-user-drag:none}
+.room:hover img{transform:scale(1.06)}
+.room .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,30,40,.55));opacity:0;transition:opacity .6s var(--ease)}
+.room:hover .ph::after{opacity:1}
+.room .go{position:absolute;left:20px;right:20px;bottom:20px;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:.92rem;transform:translateY(16px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
+.room:hover .go,.room:focus-within .go{transform:none;opacity:1}
+.room .go button{min-height:44px;padding:0 20px;border-radius:99px;background:#fff;color:var(--ink);font-weight:400;font-size:.9rem}
+.room .cap{padding:20px 4px 0}
+.room h3{font-size:1.9rem}
+.room .meta{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lake-d);margin:4px 0 10px;font-weight:400}
+.room p{color:var(--mute);max-width:44ch}
+.room.more .ph{background:var(--lake-d);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,40px)}
+.room.more img{position:absolute;inset:0;opacity:.28;mix-blend-mode:luminosity}
+.room.more .in{position:relative;z-index:1}
+.room.more h3{font-size:clamp(1.9rem,3vw,2.8rem);margin-bottom:14px}
+.room.more p{color:rgba(255,255,255,.88);margin-bottom:22px}
+.room.more .cta{background:#fff;color:var(--ink)}
+.room.more:hover img{transform:none}
+.prog{height:2px;background:var(--line);margin:28px var(--gut) 0;position:relative;overflow:hidden;border-radius:2px}
+.prog i{position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(.3)}
+
+/* breakfast */
+.bf{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,8vw,130px);align-items:center}
+.bf .imgs{position:relative;padding-bottom:18%}
+.bf .imgs .a{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;width:82%}
+.bf .imgs .a img,.bf .imgs .b img{width:100%;height:100%;object-fit:cover}
+.bf .imgs .a img{object-position:44% 50%}
+.bf .imgs .b{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:1;border-radius:var(--r);overflow:hidden;border:8px solid var(--bg)}
+.bf h2{margin:16px 0 26px}
+.bf p{color:var(--mute);max-width:46ch;font-size:1.08rem}
+.ticks{list-style:none;margin-top:28px;display:grid;gap:12px}
+.ticks li{display:flex;gap:14px;align-items:flex-start}
+.ticks li::before{content:"";flex:none;width:22px;height:1px;background:var(--lake-d);margin-top:.85em}
+
+/* around */
+.around{background:var(--sand)}
+.ar{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,7vw,110px);align-items:start}
+.ar .pic{position:sticky;top:100px;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.ar .pic img{width:100%;height:100%;object-fit:cover}
+.ar h2{margin:14px 0 40px}
+.acts{list-style:none;border-top:1px solid var(--line)}
+.acts li{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:24px 0;border-bottom:1px solid var(--line);transition:padding .5s var(--ease)}
+.acts li:hover{padding-left:12px}
+.acts h3{font-size:1.5rem;font-weight:400}
+.acts p{grid-column:1;color:var(--mute);max-width:46ch;font-size:1rem}
+.acts .tag{grid-row:1;grid-column:2;align-self:center;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lake-d);border:1px solid var(--lake);border-radius:99px;padding:5px 14px;white-space:nowrap}
+
+/* gallery */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,270px);gap:clamp(10px,1.4vw,18px)}
+.mosaic button{position:relative;overflow:hidden;border-radius:20px;background:var(--sand);display:block;width:100%;height:100%}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.mosaic button:hover img{transform:scale(1.07)}
+.mosaic .m1{grid-column:span 2;grid-row:span 2}.mosaic .m2{grid-row:span 2}.mosaic .m5{grid-column:span 2}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(24,32,40,.92);display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px)}
+.lb.on{display:flex;animation:fade .4s var(--ease)}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.lb img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;border-radius:18px}
+.lb button{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb .x{top:16px;right:16px}.lb .p{left:16px;top:50%;margin-top:-26px}.lb .n{right:16px;top:50%;margin-top:-26px}
+.lb .cnt{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:.85rem;letter-spacing:.2em}
+
+/* voices */
+.voices{text-align:center}
+.voices .q{max-width:900px;margin:40px auto 0;min-height:12em}
+.q blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.2}
+.q figcaption{margin-top:22px;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.q figure{display:none}.q figure.on{display:block;animation:fade .8s var(--ease)}
+.dots{display:flex;justify-content:center;gap:4px;margin-top:8px}
+.dots button{width:44px;height:44px;position:relative}
+.dots button::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--sand-2);transition:background .3s,transform .3s}
+.dots button[aria-current=true]::after{background:var(--lake-d);transform:scale(1.3)}
+
+/* contact */
+.contact{background:var(--lake-d);color:#fff;border-radius:48px 48px 0 0}
+.contact .eyebrow{color:#DCE7EF}
+.ct{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,7vw,110px);align-items:end}
+.contact h2{margin:16px 0 0}
+.contact dl{display:grid;gap:22px}
+.contact dt{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#DCE7EF;font-weight:400}
+.contact dd{font-size:1.25rem}
+.contact dd a{border-bottom:1px solid rgba(255,255,255,.4);transition:border-color .3s}
+.contact dd a:hover{border-color:#fff}
+.foot{margin-top:clamp(56px,8vw,110px);padding-top:26px;border-top:1px solid rgba(255,255,255,.22);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem;color:#DCE7EF}
+.spacer{height:calc(var(--barh) + 70px);background:var(--lake-d)}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--lake-d);border-radius:50%;pointer-events:none;z-index:120;opacity:0;transition:opacity .3s,width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .4s;mix-blend-mode:multiply}
+.cur.on{opacity:1}
+.cur.big{width:72px;height:72px;margin:-36px 0 0 -36px;background:rgba(157,180,196,.35)}
+.cur.hero-c{border-color:#fff;mix-blend-mode:normal}
+
+/* demo label */
+.demo-pill{position:fixed;right:14px;bottom:calc(var(--barh) + 12px);z-index:60;display:flex;align-items:center;background:rgba(255,255,255,.96);color:#333;border:1px solid rgba(0,0,0,.12);border-radius:99px;box-shadow:0 4px 18px rgba(0,0,0,.16);font:400 12px/1 system-ui,-apple-system,'Segoe UI',sans-serif}
+.demo-pill a{padding:0 4px 0 14px;min-height:44px;display:flex;align-items:center;color:#333}
+.demo-pill a:hover{text-decoration:underline}
+.demo-pill button{width:44px;height:44px;color:#555;font-size:18px;line-height:1}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:1000px){
+  .nav a.l,.nav .lang,.nav .cta{display:none}
+  .burger{display:flex}
+  .nav.open{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;align-items:flex-start;padding:90px var(--gut) 40px;gap:0}
+  .nav.open a.l,.nav.open .lang,.nav.open .cta{display:flex}
+  .nav.open a.l{font-family:var(--serif);font-style:italic;font-size:2.4rem;padding:6px 0;min-height:56px}
+  .nav.open a.l::after{display:none}
+  .nav.open .lang{margin:26px 0 20px}
+  .burger.open-b{position:relative;z-index:61;color:var(--ink)}
+  .hdr.menu{color:var(--ink);background:var(--bg)}
+  .intro,.bf,.ar,.ct{grid-template-columns:1fr}
+  .ar .pic{position:relative;top:0;aspect-ratio:4/3}
+  .bf .imgs{max-width:560px}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,38vw,260px)}
+  .mosaic .m1{grid-column:span 2;grid-row:span 1}.mosaic .m2{grid-row:span 1}.mosaic .m5{grid-column:span 1}
+  .arrows{display:none}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .book form{grid-template-columns:1fr 1fr;gap:4px}
+  .book .fld.g{grid-column:1}
+  .nights{grid-column:2;grid-row:2;min-width:0;flex-direction:row;gap:8px;align-items:center;justify-content:center}
+  .nights small{display:inline;letter-spacing:.1em}
+  .hero-txt{bottom:calc(var(--barh) + 78px)}
+  .book .cta{grid-column:1/-1;min-height:50px}
+  .book{bottom:8px;padding:6px;border-radius:18px}
+  .fld{padding:4px 12px;min-height:52px}
+  .scrollhint{display:none}
+  .toast{padding:12px 44px 12px 16px;font-size:.9rem}
+  .rooms,.contact{border-radius:32px 32px 0 0}
+  .acts li{grid-template-columns:1fr}
+  .acts .tag{grid-row:auto;grid-column:1;justify-self:start;margin-top:8px}
+  .demo-pill{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .js .rv{opacity:1;transform:none}
+}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Vai al contenuto</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Casa Ortica">Casa Ortica</a>
+    <nav class="nav" id="nav" aria-label="Principale">
+      <a class="l" href="#camere" data-i18n="n1">Camere</a>
+      <a class="l" href="#colazione" data-i18n="n2">Colazione</a>
+      <a class="l" href="#dintorni" data-i18n="n3">Dintorni</a>
+      <a class="l" href="#galleria" data-i18n="n4">Galleria</a>
+      <a class="l" href="#contatti" data-i18n="n5">Contatti</a>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" data-lang="it" aria-pressed="true"><span>IT</span></button>
+        <button type="button" data-lang="en" aria-pressed="false"><span>EN</span></button>
+      </div>
+      <a class="cta" href="#prenota" data-book data-i18n="book">Prenota</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-aria="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-label="Casa Ortica">
+  <div class="stick">
+    <div class="hero-media" id="heroMedia">
+      <img src="/img/hotel-wide-1200.webp" width="1200" height="800" fetchpriority="high" alt="Tavolo per la colazione su una terrazza affacciata sul lago, con le montagne sullo sfondo" data-i18n-alt="hAlt">
+    </div>
+    <div class="hero-txt wrap" id="heroTxt">
+      <span class="eyebrow" data-i18n="hEy">B&amp;B boutique · Lago di Como</span>
+      <h1>Casa <em>Ortica</em></h1>
+      <p data-i18n="hP">Poche camere affacciate sull&rsquo;acqua, una colazione lenta in terrazza e un lago che cambia colore a ogni ora.</p>
+    </div>
+    <span class="scrollhint" data-i18n="scroll">Scorri</span>
+  </div>
+</section>
+
+<section class="pad" id="intro">
+  <div class="wrap intro">
+    <div class="rv">
+      <span class="eyebrow" data-i18n="iEy">La casa</span>
+      <h2 data-i18n="iH">Un posto dove <em>rallentare</em>.</h2>
+      <p data-i18n="iP">Casa Ortica &egrave; una vecchia dimora di famiglia, restaurata con lino, legno e pietra locale. Nessuna reception anonima: ti accoglie chi ci abita, ti consiglia il sentiero giusto e ti consegna la chiave senza fretta.</p>
+    </div>
+    <ul class="facts rv" style="--d:.15s">
+      <li><b>01</b><span data-i18n="f1">Vista lago da ogni camera</span></li>
+      <li><b>02</b><span data-i18n="f2">Colazione in terrazza, tra gli ulivi</span></li>
+      <li><b>03</b><span data-i18n="f3">Il battello per i borghi a due passi</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rooms pad" id="camere">
+  <div class="wrap head rv">
+    <div>
+      <span class="eyebrow" data-i18n="rEy">Dormire</span>
+      <h2 data-i18n="rH">Le <em>camere</em></h2>
+    </div>
+    <div class="arrows">
+      <button class="arr" id="prev" type="button" aria-label="Precedente" data-i18n-aria="prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <button class="arr" id="next" type="button" aria-label="Successiva" data-i18n-aria="next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="track" id="track" tabindex="0" role="region" aria-label="Camere" data-i18n-aria="rAria">
+    <article class="room">
+      <div class="ph">
+        <img src="/img/hotel-900.webp" width="900" height="1125" loading="lazy" alt="Camera con finestra aperta sul lago, letto in lino bianco e vassoio della colazione" data-i18n-alt="r1Alt">
+        <div class="go"><span data-i18n="rGo">Verifica le date</span><button type="button" data-book data-i18n="rBtn">Prenota</button></div>
+      </div>
+      <div class="cap"><h3 data-i18n="r1T">Camera Lago</h3><div class="meta" data-i18n="r1M">Vista lago · 2 ospiti</div><p data-i18n="r1P">Finestre aperte sull&rsquo;acqua e lino bianco. La luce del mattino arriva prima della sveglia.</p></div>
+    </article>
+    <article class="room">
+      <div class="ph">
+        <img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" style="object-position:38% 50%" alt="Terrazza con tavolo apparecchiato e vista sul lago e sulle montagne" data-i18n-alt="r2Alt">
+        <div class="go"><span data-i18n="rGo">Verifica le date</span><button type="button" data-book data-i18n="rBtn">Prenota</button></div>
+      </div>
+      <div class="cap"><h3 data-i18n="r2T">Suite Terrazza</h3><div class="meta" data-i18n="r2M">Terrazza privata · 2&ndash;3 ospiti</div><p data-i18n="r2P">Un angolo di terrazza tutto tuo, con tavolo per la colazione e ulivi a portata di mano.</p></div>
+    </article>
+    <article class="room more">
+      <div class="ph">
+        <img src="/img/hotel-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="" role="presentation">
+        <div class="in">
+          <h3 data-i18n="r3T">Non sai quale scegliere?</h3>
+          <p data-i18n="r3P">Raccontaci come viaggi: ti consigliamo la camera giusta e ti teniamo il tavolo migliore a colazione.</p>
+          <a class="cta" href="#contatti" data-i18n="r3B">Scrivici</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+</section>
+
+<section class="pad" id="colazione">
+  <div class="wrap bf">
+    <div class="imgs rv">
+      <div class="a"><img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Colazione con caffè, croissant e succo d&rsquo;arancia sulla terrazza" data-i18n-alt="bAlt1"></div>
+      <div class="b"><img src="/img/ristorante-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Tavolino in marmo con caffè, acqua e una ciotola di olive" data-i18n-alt="bAlt2"></div>
+    </div>
+    <div class="rv" style="--d:.12s">
+      <span class="eyebrow" data-i18n="bEy">Colazione</span>
+      <h2 data-i18n="bH">Colazione <em>senza orologio</em>.</h2>
+      <p data-i18n="bP">Pane e focacce del forno del paese, torte fatte in casa, frutta di stagione, uova e caff&egrave; dalla moka. Si serve in terrazza dalle prime luci fino a tarda mattina.</p>
+      <ul class="ticks">
+        <li data-i18n="b1">Prodotti locali e di stagione</li>
+        <li data-i18n="b2">Opzioni vegetariane, senza glutine e senza lattosio su richiesta</li>
+        <li data-i18n="b3">Servita anche in camera, se preferisci</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="around pad" id="dintorni">
+  <div class="wrap ar">
+    <div class="pic rv"><img src="/img/ristorante-900.webp" width="900" height="1125" loading="lazy" alt="Tramonto sul lago visto da un tavolo in riva all&rsquo;acqua" data-i18n-alt="aAlt"></div>
+    <div>
+      <div class="rv"><span class="eyebrow" data-i18n="aEy">Intorno a noi</span>
+      <h2 data-i18n="aH">Il lago, <em>a modo tuo</em>.</h2></div>
+      <ul class="acts">
+        <li class="rv"><h3 data-i18n="a1T">Battello per i borghi</h3><span class="tag" data-i18n="a1G">In battello</span><p data-i18n="a1P">Sali al molo vicino e scendi dove ti pare: ville, giardini e piccoli porti.</p></li>
+        <li class="rv"><h3 data-i18n="a2T">Passeggiata sul lungolago</h3><span class="tag" data-i18n="a2G">A piedi</span><p data-i18n="a2P">Un tratto pianeggiante sull&rsquo;acqua, perfetto prima o dopo colazione.</p></li>
+        <li class="rv"><h3 data-i18n="a3T">Sentieri e belvedere</h3><span class="tag" data-i18n="a3G">A piedi</span><p data-i18n="a3P">Percorsi tra ulivi e boschi, da mezza giornata a giornata intera.</p></li>
+        <li class="rv"><h3 data-i18n="a4T">Ville e giardini</h3><span class="tag" data-i18n="a4G">In battello</span><p data-i18n="a4P">Dimore storiche e parchi fioriti da visitare con calma.</p></li>
+        <li class="rv"><h3 data-i18n="a5T">Cena in trattoria</h3><span class="tag" data-i18n="a5G">A piedi</span><p data-i18n="a5P">Pesce di lago e piatti di casa: ti indichiamo i tavoli che preferiamo.</p></li>
+        <li class="rv"><h3 data-i18n="a6T">Kayak e vela</h3><span class="tag" data-i18n="a6G">In auto</span><p data-i18n="a6P">Noleggio e uscite con guida, anche per chi parte da zero.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="galleria">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow" data-i18n="gEy">Galleria</span><h2 data-i18n="gH">Qualche <em>istante</em></h2></div></div>
+    <div class="mosaic rv" id="mosaic">
+      <button type="button" class="m1" data-full="/img/hotel-wide-1200.webp" data-w="1200" data-h="800" data-i18n-aria="gAria"><img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Terrazza sul lago" data-i18n-alt="g1"></button>
+      <button type="button" class="m2" data-full="/img/hotel-900.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/hotel-900.webp" width="900" height="1125" loading="lazy" alt="Camera con vista lago" data-i18n-alt="g2"></button>
+      <button type="button" class="m3" data-full="/img/ristorante-dettaglio-700.webp" data-w="700" data-h="700" data-i18n-aria="gAria"><img src="/img/ristorante-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Caffè e olive su un tavolino in marmo" data-i18n-alt="g3"></button>
+      <button type="button" class="m4" data-full="/img/hotel-dettaglio-700.webp" data-w="700" data-h="700" data-i18n-aria="gAria"><img src="/img/hotel-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="La chiave della camera sul bancone dell&rsquo;accoglienza" data-i18n-alt="g4"></button>
+      <button type="button" class="m5" data-full="/img/ristorante-900.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/ristorante-900.webp" width="900" height="1125" loading="lazy" style="object-position:50% 30%" alt="Tramonto sul lago dal tavolo" data-i18n-alt="g5"></button>
+    </div>
+  </div>
+</section>
+
+<section class="voices pad" id="ospiti" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv" data-i18n="vEy">Dicono di noi</span>
+    <div class="q rv" id="q" aria-live="polite">
+      <figure class="on"><blockquote data-i18n="q1">&laquo;Una settimana di silenzio e luce. La colazione in terrazza vale da sola il viaggio.&raquo;</blockquote><figcaption>Marta R. &middot; <span data-i18n="q1o">Milano</span></figcaption></figure>
+      <figure><blockquote data-i18n="q2">&laquo;Il posto giusto da cui partire ogni giorno: padroni di casa attenti, camere silenziose.&raquo;</blockquote><figcaption>Jonas K. &middot; <span data-i18n="q2o">Monaco di Baviera</span></figcaption></figure>
+      <figure><blockquote data-i18n="q3">&laquo;Ci hanno consigliato un sentiero e una trattoria: erano esattamente ci&ograve; che cercavamo.&raquo;</blockquote><figcaption>Elena e P. &middot; <span data-i18n="q3o">Torino</span></figcaption></figure>
+    </div>
+    <div class="dots" id="dots"><button type="button" aria-current="true" aria-label="1"></button><button type="button" aria-label="2"></button><button type="button" aria-label="3"></button></div>
+  </div>
+</section>
+
+<section class="contact pad" id="contatti">
+  <div class="wrap">
+    <div class="ct">
+      <div class="rv"><span class="eyebrow" data-i18n="cEy">Contatti</span><h2 data-i18n="cH">Scrivici, <em>rispondiamo noi</em>.</h2></div>
+      <dl class="rv" style="--d:.12s">
+        <div><dt data-i18n="cA">Dove siamo</dt><dd>Via del Lago 0, 22000 Lago di Como</dd></div>
+        <div><dt data-i18n="cT">Telefono</dt><dd><a href="tel:+390000000000">+39 000 000 0000</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:ciao@casaortica.example">ciao@casaortica.example</a></dd></div>
+        <div><dt data-i18n="cC">Arrivi e partenze</dt><dd data-i18n="cCv">Arrivo dalle 15:00 &middot; partenza entro le 11:00</dd></div>
+      </dl>
+    </div>
+    <div class="foot"><span>&copy; Casa Ortica &middot; P. IVA 00000000000</span><span data-i18n="cDemo">Sito dimostrativo: attivit&agrave; di fantasia.</span></div>
+  </div>
+</section>
+</main>
+<div class="spacer" aria-hidden="true"></div>
+
+<div class="book" id="prenota" role="search" aria-label="Prenotazione">
+  <div class="toast" id="toast" role="status" aria-live="polite"><span id="toastTxt"></span><button type="button" id="toastX" aria-label="Chiudi" data-i18n-aria="close">&times;</button></div>
+  <form id="bf" novalidate>
+    <div class="fld"><label for="d1" data-i18n="lIn">Arrivo</label><input type="date" id="d1" required></div>
+    <div class="fld"><label for="d2" data-i18n="lOut">Partenza</label><input type="date" id="d2" required></div>
+    <div class="fld g"><label for="gu" data-i18n="lG">Ospiti</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+    <div class="nights" aria-live="polite"><span id="nn">&mdash;</span><small data-i18n="lN">notti</small></div>
+    <button class="cta" type="submit" data-i18n="chk">Verifica disponibilit&agrave;</button>
+  </form>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galleria" data-i18n-aria="gAria2">
+  <button class="x" type="button" id="lbX" aria-label="Chiudi" data-i18n-aria="close">&times;</button>
+  <button class="p" type="button" id="lbP" aria-label="Precedente" data-i18n-aria="prev">&#8592;</button>
+  <img id="lbI" src="" alt="" width="900" height="600">
+  <button class="n" type="button" id="lbN" aria-label="Successiva" data-i18n-aria="next">&#8594;</button>
+  <div class="cnt" id="lbC"></div>
+</div>
+
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<div class="demo-pill" id="pill"><a href="/siti-web-hotel-bnb/">Anteprima realizzata da UBG Media</a><button type="button" aria-label="Chiudi etichetta" id="pillX">&times;</button></div>
+
+<script>
+(function(){
+'use strict';
+var D=document,H=D.documentElement,$=function(s,r){return (r||D).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s))};
+H.classList.add('js');
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- i18n ---------- */
+var T={
+it:{n1:'Camere',n2:'Colazione',n3:'Dintorni',n4:'Galleria',n5:'Contatti',book:'Prenota',menu:'Menu',
+hEy:'B&B boutique · Lago di Como',hP:'Poche camere affacciate sull’acqua, una colazione lenta in terrazza e un lago che cambia colore a ogni ora.',hAlt:'Tavolo per la colazione su una terrazza affacciata sul lago, con le montagne sullo sfondo',scroll:'Scorri',
+iEy:'La casa',iH:'Un posto dove <em>rallentare</em>.',iP:'Casa Ortica è una vecchia dimora di famiglia, restaurata con lino, legno e pietra locale. Nessuna reception anonima: ti accoglie chi ci abita, ti consiglia il sentiero giusto e ti consegna la chiave senza fretta.',
+f1:'Vista lago da ogni camera',f2:'Colazione in terrazza, tra gli ulivi',f3:'Il battello per i borghi a due passi',
+rEy:'Dormire',rH:'Le <em>camere</em>',prev:'Precedente',next:'Successiva',rAria:'Camere',rGo:'Verifica le date',rBtn:'Prenota',
+r1Alt:'Camera con finestra aperta sul lago, letto in lino bianco e vassoio della colazione',r1T:'Camera Lago',r1M:'Vista lago · 2 ospiti',r1P:'Finestre aperte sull’acqua e lino bianco. La luce del mattino arriva prima della sveglia.',
+r2Alt:'Terrazza con tavolo apparecchiato e vista sul lago e sulle montagne',r2T:'Suite Terrazza',r2M:'Terrazza privata · 2–3 ospiti',r2P:'Un angolo di terrazza tutto tuo, con tavolo per la colazione e ulivi a portata di mano.',
+r3T:'Non sai quale scegliere?',r3P:'Raccontaci come viaggi: ti consigliamo la camera giusta e ti teniamo il tavolo migliore a colazione.',r3B:'Scrivici',
+bEy:'Colazione',bH:'Colazione <em>senza orologio</em>.',bP:'Pane e focacce del forno del paese, torte fatte in casa, frutta di stagione, uova e caffè dalla moka. Si serve in terrazza dalle prime luci fino a tarda mattina.',
+b1:'Prodotti locali e di stagione',b2:'Opzioni vegetariane, senza glutine e senza lattosio su richiesta',b3:'Servita anche in camera, se preferisci',bAlt1:'Colazione con caffè, croissant e succo d’arancia sulla terrazza',bAlt2:'Tavolino in marmo con caffè, acqua e una ciotola di olive',
+aEy:'Intorno a noi',aH:'Il lago, <em>a modo tuo</em>.',aAlt:'Tramonto sul lago visto da un tavolo in riva all’acqua',
+a1T:'Battello per i borghi',a1G:'In battello',a1P:'Sali al molo vicino e scendi dove ti pare: ville, giardini e piccoli porti.',
+a2T:'Passeggiata sul lungolago',a2G:'A piedi',a2P:'Un tratto pianeggiante sull’acqua, perfetto prima o dopo colazione.',
+a3T:'Sentieri e belvedere',a3G:'A piedi',a3P:'Percorsi tra ulivi e boschi, da mezza giornata a giornata intera.',
+a4T:'Ville e giardini',a4G:'In battello',a4P:'Dimore storiche e parchi fioriti da visitare con calma.',
+a5T:'Cena in trattoria',a5G:'A piedi',a5P:'Pesce di lago e piatti di casa: ti indichiamo i tavoli che preferiamo.',
+a6T:'Kayak e vela',a6G:'In auto',a6P:'Noleggio e uscite con guida, anche per chi parte da zero.',
+gEy:'Galleria',gH:'Qualche <em>istante</em>',gAria:'Ingrandisci la foto',gAria2:'Galleria',g1:'Terrazza sul lago',g2:'Camera con vista lago',g3:'Caffè e olive su un tavolino in marmo',g4:'La chiave della camera sul bancone dell’accoglienza',g5:'Tramonto sul lago dal tavolo',
+vEy:'Dicono di noi',q1:'«Una settimana di silenzio e luce. La colazione in terrazza vale da sola il viaggio.»',q1o:'Milano',q2:'«Il posto giusto da cui partire ogni giorno: padroni di casa attenti, camere silenziose.»',q2o:'Monaco di Baviera',q3:'«Ci hanno consigliato un sentiero e una trattoria: erano esattamente ciò che cercavamo.»',q3o:'Torino',
+cEy:'Contatti',cH:'Scrivici, <em>rispondiamo noi</em>.',cA:'Dove siamo',cT:'Telefono',cC:'Arrivi e partenze',cCv:'Arrivo dalle 15:00 · partenza entro le 11:00',cDemo:'Sito dimostrativo: attività di fantasia.',
+lIn:'Arrivo',lOut:'Partenza',lG:'Ospiti',lN:'notti',chk:'Verifica disponibilità',close:'Chiudi',
+nOne:'notte',nMany:'notti',gOne:'ospite',gMany:'ospiti',
+errDates:'Scegli la data di arrivo e quella di partenza.',errOrder:'La partenza deve essere dopo l’arrivo.',
+ok:function(n,g,a,b){return 'DEMO · Richiesta simulata: '+n+' '+(n==1?'notte':'notti')+', '+g+' '+(g==1?'ospite':'ospiti')+', dal '+a+' al '+b+'. In un sito reale qui vedresti disponibilità e tariffe. Nessun dato è stato inviato.'}},
+en:{n1:'Rooms',n2:'Breakfast',n3:'Around',n4:'Gallery',n5:'Contact',book:'Book',menu:'Menu',
+hEy:'Boutique B&B · Lake Como',hP:'A few rooms on the water, a slow breakfast on the terrace and a lake that changes colour every hour.',hAlt:'Breakfast table on a terrace overlooking the lake, with mountains behind',scroll:'Scroll',
+iEy:'The house',iH:'A place to <em>slow down</em>.',iP:'Casa Ortica is an old family home, restored with linen, wood and local stone. No anonymous front desk: the people who live here welcome you, suggest the right trail and hand you the key without rushing.',
+f1:'Lake view from every room',f2:'Breakfast on the terrace, among the olive trees',f3:'The boat to the lakeside villages is a short walk away',
+rEy:'Stay',rH:'The <em>rooms</em>',prev:'Previous',next:'Next',rAria:'Rooms',rGo:'Check dates',rBtn:'Book',
+r1Alt:'Room with an open window onto the lake, white linen bed and a breakfast tray',r1T:'Lake Room',r1M:'Lake view · 2 guests',r1P:'Windows open onto the water and white linen. Morning light arrives before the alarm.',
+r2Alt:'Terrace with a laid table and a view of the lake and the mountains',r2T:'Terrace Suite',r2M:'Private terrace · 2–3 guests',r2P:'A corner of terrace all your own, with a breakfast table and olive trees within reach.',
+r3T:'Not sure which to pick?',r3P:'Tell us how you travel: we will suggest the right room and keep the best breakfast table for you.',r3B:'Get in touch',
+bEy:'Breakfast',bH:'Breakfast <em>without a clock</em>.',bP:'Bread and focaccia from the village bakery, home-made cakes, seasonal fruit, eggs and moka coffee. Served on the terrace from first light until late morning.',
+b1:'Local, seasonal produce',b2:'Vegetarian, gluten-free and lactose-free options on request',b3:'Also served in your room, if you prefer',bAlt1:'Breakfast with coffee, croissant and orange juice on the terrace',bAlt2:'Marble table with coffee, water and a bowl of olives',
+aEy:'Around us',aH:'The lake, <em>your way</em>.',aAlt:'Sunset over the lake seen from a table by the water',
+a1T:'Boat to the villages',a1G:'By boat',a1P:'Hop on at the nearby pier and get off wherever you like: villas, gardens and tiny harbours.',
+a2T:'Lakeside walk',a2G:'On foot',a2P:'A flat stretch along the water, perfect before or after breakfast.',
+a3T:'Trails and viewpoints',a3G:'On foot',a3P:'Paths through olive groves and woods, from half a day to a full one.',
+a4T:'Villas and gardens',a4G:'By boat',a4P:'Historic homes and flowering parks to visit at your own pace.',
+a5T:'Dinner at a trattoria',a5G:'On foot',a5P:'Lake fish and home cooking: we will point you to our favourite tables.',
+a6T:'Kayak and sailing',a6G:'By car',a6P:'Rentals and guided outings, also for complete beginners.',
+gEy:'Gallery',gH:'A few <em>moments</em>',gAria:'Enlarge photo',gAria2:'Gallery',g1:'Terrace over the lake',g2:'Room with a lake view',g3:'Coffee and olives on a marble table',g4:'The room key on the reception desk',g5:'Sunset over the lake from the table',
+vEy:'Guests say',q1:'“A week of silence and light. Breakfast on the terrace is worth the trip on its own.”',q1o:'Milan',q2:'“The right base to set out from every day: attentive hosts, quiet rooms.”',q2o:'Munich',q3:'“They suggested a trail and a trattoria: exactly what we were looking for.”',q3o:'Turin',
+cEy:'Contact',cH:'Write to us, <em>we answer in person</em>.',cA:'Where we are',cT:'Phone',cC:'Arrival and departure',cCv:'Check-in from 3 pm · check-out by 11 am',cDemo:'Demo website: fictional business.',
+lIn:'Check-in',lOut:'Check-out',lG:'Guests',lN:'nights',chk:'Check availability',close:'Close',
+errDates:'Please choose your check-in and check-out dates.',errOrder:'Check-out must be after check-in.',
+ok:function(n,g,a,b){return 'DEMO · Simulated request: '+n+' night'+(n==1?'':'s')+', '+g+' guest'+(g==1?'':'s')+', from '+a+' to '+b+'. On a real site you would see availability and rates here. No data has been sent.'}}
+};
+var lang='it';
+function tr(k){var v=T[lang][k];return v==null?T.it[k]:v}
+function applyLang(l){
+  lang=l;H.lang=l;
+  $$('[data-i18n]').forEach(function(e){var v=tr(e.getAttribute('data-i18n'));if(typeof v==='string')e.innerHTML=v});
+  $$('[data-i18n-alt]').forEach(function(e){e.alt=tr(e.getAttribute('data-i18n-alt'))});
+  $$('[data-i18n-aria]').forEach(function(e){e.setAttribute('aria-label',tr(e.getAttribute('data-i18n-aria')))});
+  $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+  D.title=l==='en'?'Casa Ortica – Boutique B&B on Lake Como':'Casa Ortica – B&B boutique sul Lago di Como';
+  try{localStorage.setItem('co-lang',l)}catch(e){}
+  nights();
+}
+$$('.lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
+
+/* ---------- header, menu ---------- */
+var hdr=$('#hdr'),nav=$('#nav'),burger=$('#burger');
+function menu(open){nav.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);hdr.classList.toggle('menu',open);burger.classList.toggle('open-b',open);D.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',function(){menu(!nav.classList.contains('open'))});
+$$('a.l,.nav .cta').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+D.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+
+/* ---------- bar height ---------- */
+var bar=$('#prenota');
+function barH(){H.style.setProperty('--barh',(bar.offsetHeight+16)+'px')}
+barH();addEventListener('resize',barH);
+if(window.ResizeObserver)new ResizeObserver(barH).observe(bar);
+
+/* ---------- hero scroll ---------- */
+var hero=$('#top'),hm=$('#heroMedia'),ht=$('#heroTxt'),ticking=false;
+function onScroll(){
+  var y=scrollY,vh=innerHeight;
+  hdr.classList.toggle('solid',y>vh*.08&&!nav.classList.contains('open'));
+  var range=hero.offsetHeight-vh,p=Math.min(1,Math.max(0,y/range));
+  if(!RM){
+    var s=1-.2*p;
+    hm.style.transform='scale('+s+')';
+    hm.style.borderRadius=(48*p/s)+'px';
+    ht.style.opacity=String(1-Math.min(1,p*1.6));
+    ht.style.transform='translateY('+(-40*p)+'px)';
+  }
+  var t=$('#track');if(t)prog();
+  ticking=false;
+}
+addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+
+/* ---------- reveal ---------- */
+if('IntersectionObserver' in window&&!RM){
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  $$('.rv').forEach(function(e){io.observe(e)});
+}else $$('.rv').forEach(function(e){e.classList.add('in')});
+
+/* ---------- carousel ---------- */
+var track=$('#track'),pv=$('#prev'),nx=$('#next'),pg=$('#prog');
+function step(){var c=track.querySelector('.room');return c?c.offsetWidth+parseFloat(getComputedStyle(track).columnGap||20):300}
+function prog(){
+  var max=track.scrollWidth-track.clientWidth;
+  var r=max>0?track.scrollLeft/max:1;
+  pg.style.transform='scaleX('+(.18+.82*r)+')';
+  pv.disabled=track.scrollLeft<4;nx.disabled=track.scrollLeft>=max-4;
+}
+pv.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'})});
+nx.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'})});
+track.addEventListener('scroll',function(){requestAnimationFrame(prog)},{passive:true});
+track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){track.scrollBy({left:step(),behavior:'smooth'});e.preventDefault()}if(e.key==='ArrowLeft'){track.scrollBy({left:-step(),behavior:'smooth'});e.preventDefault()}});
+var dr=null;
+track.addEventListener('pointerdown',function(e){
+  if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('button,a'))return;
+  dr={x:e.clientX,l:track.scrollLeft,m:false};
+});
+addEventListener('pointermove',function(e){
+  if(!dr)return;var dx=e.clientX-dr.x;
+  if(!dr.m&&Math.abs(dx)>5){dr.m=true;track.classList.add('drag')}
+  if(dr.m)track.scrollLeft=dr.l-dx;
+});
+addEventListener('pointerup',function(){
+  if(!dr)return;var m=dr.m;dr=null;
+  if(m){track.classList.remove('drag');var s=step();track.scrollTo({left:Math.round(track.scrollLeft/s)*s,behavior:'smooth'})}
+});
+prog();
+
+/* ---------- booking ---------- */
+var d1=$('#d1'),d2=$('#d2'),gu=$('#gu'),nn=$('#nn'),toast=$('#toast'),tt=$('#toastTxt');
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+var today=new Date();d1.min=iso(today);d2.min=iso(today);
+function parse(v){if(!v)return null;var p=v.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function diff(){var a=parse(d1.value),b=parse(d2.value);if(!a||!b)return null;return Math.round((b-a)/864e5)}
+function nights(){var n=diff();nn.textContent=(n!=null&&n>0)?String(n):'—'}
+d1.addEventListener('change',function(){
+  var a=parse(d1.value);
+  if(a){var m=new Date(a);m.setDate(m.getDate()+1);d2.min=iso(m);if(!d2.value||parse(d2.value)<=a){d2.value=iso(m)}}
+  nights();hide();
+});
+d2.addEventListener('change',function(){nights();hide()});
+function show(t,err){tt.textContent=t;toast.classList.toggle('err',!!err);toast.classList.add('on');barH()}
+function hide(){toast.classList.remove('on')}
+$('#toastX').addEventListener('click',hide);
+function fmt(d){return d.toLocaleDateString(lang==='en'?'en-GB':'it-IT',{day:'numeric',month:'short'})}
+$('#bf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var a=parse(d1.value),b=parse(d2.value);
+  if(!a||!b){show(tr('errDates'),1);(a?d2:d1).focus();return}
+  var n=diff();
+  if(n<=0){show(tr('errOrder'),1);d2.focus();return}
+  show(T[lang].ok(n,gu.value,fmt(a),fmt(b)));
+});
+$$('[data-book]').forEach(function(b){b.addEventListener('click',function(e){
+  if(b.tagName==='A')e.preventDefault();
+  bar.scrollIntoView({block:'end'});d1.focus({preventScroll:true});
+  bar.animate&&!RM&&bar.animate([{transform:'translateX(-50%) scale(1)'},{transform:'translateX(-50%) scale(1.03)'},{transform:'translateX(-50%) scale(1)'}],{duration:700,easing:'cubic-bezier(.22,.7,.2,1)'});
+})});
+
+/* ---------- lightbox ---------- */
+var tiles=$$('#mosaic button'),lb=$('#lb'),lbI=$('#lbI'),lbC=$('#lbC'),cur=0,last=null;
+function open(i){cur=(i+tiles.length)%tiles.length;var t=tiles[cur],im=$('img',t);lbI.src=t.dataset.full;lbI.width=+t.dataset.w;lbI.height=+t.dataset.h;lbI.alt=im.alt;lbC.textContent=(cur+1)+' / '+tiles.length;lb.classList.add('on');D.body.style.overflow='hidden'}
+function close(){lb.classList.remove('on');D.body.style.overflow='';if(last)last.focus()}
+tiles.forEach(function(t,i){t.addEventListener('click',function(){last=t;open(i);$('#lbX').focus()})});
+$('#lbX').addEventListener('click',close);
+$('#lbP').addEventListener('click',function(){open(cur-1)});
+$('#lbN').addEventListener('click',function(){open(cur+1)});
+lb.addEventListener('click',function(e){if(e.target===lb)close()});
+D.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')close();if(e.key==='ArrowLeft')open(cur-1);if(e.key==='ArrowRight')open(cur+1);
+  if(e.key==='Tab'){var f=$$('button',lb);var i=f.indexOf(D.activeElement);e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()}
+});
+
+/* ---------- voices ---------- */
+var figs=$$('#q figure'),dots=$$('#dots button'),qi=0,qt;
+function q(i){qi=(i+figs.length)%figs.length;figs.forEach(function(f,k){f.classList.toggle('on',k===qi)});dots.forEach(function(d,k){if(k===qi)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})}
+dots.forEach(function(d,i){d.addEventListener('click',function(){q(i);auto()})});
+function auto(){clearInterval(qt);if(!RM)qt=setInterval(function(){q(qi+1)},7000)}
+auto();
+
+/* ---------- cursor (desktop only) ---------- */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!RM){
+  var c=$('#cur'),cx=0,cy=0,tx=0,ty=0,run=false;
+  addEventListener('mousemove',function(e){
+    tx=e.clientX;ty=e.clientY;c.classList.add('on');
+    var el=e.target.closest&&e.target.closest('a,button,input,select,.room,.mosaic button');
+    c.classList.toggle('big',!!(el&&!el.closest('.book')));
+    c.classList.toggle('hero-c',!!(e.target.closest&&e.target.closest('.stick'))&&scrollY<innerHeight*.5);
+    if(!run){run=true;loop()}
+  });
+  D.addEventListener('mouseleave',function(){c.classList.remove('on')});
+  function loop(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;c.style.transform='translate3d('+cx+'px,'+cy+'px,0)';requestAnimationFrame(loop)}
+}
+
+/* ---------- demo pill ---------- */
+$('#pillX').addEventListener('click',function(){$('#pill').style.display='none'});
+
+/* init */
+var sl=null;try{sl=localStorage.getItem('co-lang')}catch(e){}
+if(sl==='en')applyLang('en');
+onScroll();
+})();
+</script>
+</body>
+</html>
