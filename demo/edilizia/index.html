@@ -7,6 +7,8 @@
 <title>Rossi &amp; Fontana Ristrutturazioni | Imprese edili sul Lago di Como</title>
 <meta name="description" content="Rossi &amp; Fontana Ristrutturazioni: ristrutturazioni complete, recupero di case in pietra e facciate tra Como e Lecco. Sopralluogo e preventivo scritto.">
 <meta name="theme-color" content="#1f2a24">
+<script>if(/[?&]mock\b/.test(location.search))document.documentElement.classList.add('mock')</script>
+<link rel="preload" as="image" href="/img/d-edilizia-dopo-L.webp" imagesrcset="/img/d-edilizia-dopo-S.webp 700w,/img/d-edilizia-dopo-L.webp 1200w" imagesizes="(max-width:900px) 100vw,58vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -71,13 +73,11 @@ nav a:not(.btn):hover::after{transform:scaleX(1)}
 /* slider */
 .cmp{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--bosco-d);touch-action:pan-y;user-select:none;-webkit-user-select:none;--p:50%;cursor:ew-resize;border:1px solid var(--ink)}
 .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.cmp .bef{clip-path:inset(0 calc(100% - var(--p)) 0 0);filter:grayscale(.9) contrast(.85) brightness(.82) sepia(.25)}
-.cmp .bef-ov{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0);background:repeating-linear-gradient(135deg,rgba(28,33,30,.16) 0 2px,transparent 2px 9px);pointer-events:none}
-.cmp .aft{filter:saturate(1.12) contrast(1.05)}
+.cmp .bef{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
 .cmp .lbl{position:absolute;top:14px;font:600 12px var(--d);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;background:var(--ink);color:var(--paper);pointer-events:none}
-.cmp .l1{left:14px}.cmp .l2{right:14px;background:var(--ocra);color:var(--ink)}
-.cmp .hd{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:var(--paper);pointer-events:none}
-.cmp .knob{position:absolute;top:50%;left:var(--p);width:52px;height:52px;margin:-26px 0 0 -26px;background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;font:700 16px var(--d);pointer-events:none}
+.cmp .l1{left:14px;z-index:2}.cmp .l2{right:14px;background:var(--ocra);color:var(--ink)}
+.cmp .hd{z-index:2;position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:var(--paper);pointer-events:none}
+.cmp .knob{z-index:2;position:absolute;top:50%;left:var(--p);width:52px;height:52px;margin:-26px 0 0 -26px;background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;font:700 16px var(--d);pointer-events:none}
 .cmp:focus-visible{outline:3px solid var(--ocra);outline-offset:3px}
 .cmp-cap{display:flex;justify-content:space-between;gap:12px;font:500 12px var(--d);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding-top:10px;border-top:1px solid var(--line);margin-top:0}
 .hero-note{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ink);padding:16px 0;font:500 13px var(--d);letter-spacing:.1em;text-transform:uppercase}
@@ -112,6 +112,13 @@ nav a:not(.btn):hover::after{transform:scaleX(1)}
 .w1{grid-column:span 7;min-height:520px}.w2{grid-column:span 5}.w3{grid-column:span 5}.w4{grid-column:span 7}
 .w4 .ph{min-height:300px}
 .works-note{margin-top:24px;font:500 12px var(--d);letter-spacing:.1em;text-transform:uppercase;color:rgba(232,230,223,.55)}
+/* foto sezioni */
+.svc-ph{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:clamp(28px,4vw,48px)}
+.fig{margin:0;border:1px solid var(--ink);background:var(--bosco-d)}
+.fig img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.fig figcaption{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;background:var(--paper);font:600 12px var(--d);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border-top:1px solid var(--ink)}
+.fig.wide{margin-bottom:clamp(36px,6vw,64px)}
+.fig.wide img{aspect-ratio:12/5}
 /* processo */
 .proc{position:relative;display:grid;gap:0;padding-left:clamp(56px,9vw,120px)}
 .rail{position:absolute;left:clamp(17px,3vw,39px);top:6px;bottom:6px;width:2px;background:var(--line)}
@@ -164,6 +171,10 @@ footer b{color:var(--paper);font-family:var(--d)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 .hl{opacity:0;transform:translateY(30px);animation:up .8s steps(6,end) forwards}
 @keyframes up{to{opacity:1;transform:none}}
+/* modalita mockup: tutto gia nello stato finale */
+.mock .rv,.mock .hl{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+.mock .map .lake{stroke-dashoffset:0;transition:none}
+.mock .tagUBG{display:none!important}
 /* whatsapp + etichetta */
 .wa{display:none}
 .tagUBG{position:fixed;right:14px;bottom:14px;z-index:70;display:flex;align-items:center;background:#111;color:#fff;font:500 12px/1 system-ui,sans-serif;border-radius:99px;box-shadow:0 4px 18px rgba(0,0,0,.28)}
@@ -182,6 +193,8 @@ footer b{color:var(--paper);font-family:var(--d)}
   .svc{grid-template-columns:1fr}.svc article:nth-child(even){padding-left:0;border-left:0}
   .svc article{grid-template-columns:44px 1fr}
   .w1,.w2,.w3,.w4{grid-column:1/-1;min-height:0}.w1 .ph{min-height:320px}
+  .svc-ph{grid-template-columns:1fr}
+  .fig.wide img{aspect-ratio:3/2}
   .step{grid-template-columns:1fr}.step .k{font-size:56px}
   form{grid-template-columns:1fr}
   .wa{display:flex;position:fixed;left:14px;bottom:14px;z-index:70;min-height:48px;padding:0 18px;align-items:center;gap:8px;background:#1f7a4a;color:#fff;font:600 15px var(--d);text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,.28)}
@@ -228,14 +241,13 @@ footer b{color:var(--paper);font-family:var(--d)}
         </div>
       </div>
       <div class="hl" style="animation-delay:.2s">
-        <div class="cmp" id="cmp" role="slider" tabindex="0" aria-label="Confronto prima e dopo: trascina per scoprire il lavoro finito" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <img class="aft" src="/img/edilizia-wide-1200.webp" srcset="/img/edilizia-wide-700.webp 700w,/img/edilizia-wide-1200.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="Cantiere di recupero di una casa in pietra con vista sul lago all'alba" fetchpriority="high">
-          <img class="bef" src="/img/edilizia-wide-1200.webp" srcset="/img/edilizia-wide-700.webp 700w,/img/edilizia-wide-1200.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="" aria-hidden="true">
-          <div class="bef-ov"></div>
-          <span class="lbl l1">Prima · grezzo</span><span class="lbl l2">Dopo · finito</span>
+        <div class="cmp" id="cmp" role="slider" tabindex="0" aria-label="Confronto prima e dopo: trascina per scoprire il lavoro finito" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% prima, 50% dopo">
+          <img class="aft" src="/img/d-edilizia-dopo-L.webp" srcset="/img/d-edilizia-dopo-S.webp 700w,/img/d-edilizia-dopo-L.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="Stanza ristrutturata e finita: pareti intonacate, pavimento posato" fetchpriority="high">
+          <img class="bef" src="/img/d-edilizia-prima-L.webp" srcset="/img/d-edilizia-prima-S.webp 700w,/img/d-edilizia-prima-L.webp 1200w" sizes="(max-width:900px) 100vw,58vw" width="1200" height="800" alt="La stessa stanza prima dei lavori, da ristrutturare">
+          <span class="lbl l1">Prima</span><span class="lbl l2">Dopo</span>
           <div class="hd"></div><div class="knob" aria-hidden="true">&lt;&gt;</div>
         </div>
-        <div class="cmp-cap"><span>Trascina per confrontare</span><span>Illustrazione simbolica</span></div>
+        <div class="cmp-cap"><span>Trascina per confrontare</span><span>Foto dimostrativa</span></div>
       </div>
     </div>
     <div class="hero-note"><span>Como · Lecco · Alto Lario</span><span>Sopralluogo su appuntamento</span><span>Preventivo scritto</span></div>
@@ -256,6 +268,10 @@ footer b{color:var(--paper);font-family:var(--d)}
 <section class="sec" id="servizi" aria-labelledby="t-serv">
   <div class="wrap">
     <div class="sec-head"><p class="tag rv"><b>03</b>Servizi</p><h2 id="t-serv" class="rv d1">Dalla struttura alle finiture.</h2><p class="rv d2">Coordiniamo muratori, impiantisti e serramentisti: tu non rincorri nessuno.</p></div>
+    <div class="svc-ph">
+      <figure class="fig rv"><img src="/img/d-edilizia-intonaco-L.webp" srcset="/img/d-edilizia-intonaco-S.webp 480w,/img/d-edilizia-intonaco-L.webp 900w" sizes="(max-width:900px) 92vw,46vw" width="900" height="900" loading="lazy" alt="Operaio che stende l'intonaco su una parete" style="aspect-ratio:3/2"><figcaption><span>Intonaci e finiture</span><span>A.03</span></figcaption></figure>
+      <figure class="fig rv d1"><img src="/img/d-edilizia-materiali-L.webp" srcset="/img/d-edilizia-materiali-S.webp 480w,/img/d-edilizia-materiali-L.webp 900w" sizes="(max-width:900px) 92vw,46vw" width="900" height="900" loading="lazy" alt="Materiali da costruzione scelti e ordinati in cantiere" style="aspect-ratio:3/2"><figcaption><span>Cura dei materiali</span><span>A.01</span></figcaption></figure>
+    </div>
     <div class="svc">
       <article class="rv"><span class="no">A.01</span><div><h3>Ristrutturazione completa</h3><p>Demolizioni, impianti, massetti, pavimenti, bagni e cucine. Casa e appartamenti, dal progetto al collaudo.</p></div></article>
       <article class="rv d1"><span class="no">A.02</span><div><h3>Recupero case in pietra</h3><p>Consolidamento, rifacimento di tetti e murature a vista, nel rispetto dei materiali del posto.</p></div></article>
@@ -269,10 +285,10 @@ footer b{color:var(--paper);font-family:var(--d)}
   <div class="wrap">
     <div class="sec-head"><p class="tag rv"><b>04</b>Cantieri</p><h2 id="t-lav" class="rv d1">Cantieri che parlano da soli.</h2><p class="rv d2">Ogni scheda racconta tipologia di lavoro e zona. I dettagli li mostriamo di persona, sul posto.</p></div>
     <div class="works">
-      <article class="w w1 rv"><div class="ph"><img src="/img/edilizia-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Casa in pietra in ristrutturazione con ponteggio e vista sul lago" style="object-position:70% 50%"></div><div class="meta"><span class="id">C-01</span><h3>Recupero casa in pietra</h3><span class="zn">Tremezzina · Alto Lario</span></div></article>
-      <article class="w w2 rv d1"><div class="ph"><img src="/img/edilizia-600.webp" width="600" height="750" loading="lazy" alt="Operaio che stende intonaco su una parete in pietra" style="object-position:50% 30%"></div><div class="meta"><span class="id">C-02</span><h3>Intonaco e murature a vista</h3><span class="zn">Bellagio · Como</span></div></article>
-      <article class="w w3 rv"><div class="ph"><img src="/img/edilizia-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Progetti arrotolati, casco e metro sul tavolo di un cantiere affacciato sul lago"></div><div class="meta"><span class="id">C-03</span><h3>Ristrutturazione completa</h3><span class="zn">Lecco · Lago di Lecco</span></div></article>
-      <article class="w w4 rv d1"><div class="ph"><img src="/img/edilizia-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Cantiere in quota con ponteggio e panorama sul lago" style="object-position:15% 40%"></div><div class="meta"><span class="id">C-04</span><h3>Facciata e ponteggio</h3><span class="zn">Mandello del Lario · Lecco</span></div></article>
+      <article class="w w1 rv"><div class="ph"><img src="/img/d-edilizia-ponteggio-L.webp" srcset="/img/d-edilizia-ponteggio-S.webp 520w,/img/d-edilizia-ponteggio-L.webp 900w" sizes="(max-width:900px) 92vw,55vw" width="900" height="1125" loading="lazy" alt="Facciata con ponteggio montato durante i lavori" style="object-position:50% 40%"></div><div class="meta"><span class="id">C-01</span><h3>Facciata e ponteggio</h3><span class="zn">Tremezzina · Alto Lario</span></div></article>
+      <article class="w w2 rv d1"><div class="ph"><img src="/img/d-edilizia-tetto-L.webp" srcset="/img/d-edilizia-tetto-S.webp 520w,/img/d-edilizia-tetto-L.webp 900w" sizes="(max-width:900px) 92vw,40vw" width="900" height="1125" loading="lazy" alt="Rifacimento di una copertura in cantiere"></div><div class="meta"><span class="id">C-02</span><h3>Rifacimento del tetto</h3><span class="zn">Bellagio · Como</span></div></article>
+      <article class="w w3 rv"><div class="ph"><img src="/img/d-edilizia-cucina-L.webp" srcset="/img/d-edilizia-cucina-S.webp 700w,/img/d-edilizia-cucina-L.webp 1200w" sizes="(max-width:900px) 92vw,40vw" width="1200" height="800" loading="lazy" alt="Cucina finita al termine della ristrutturazione"></div><div class="meta"><span class="id">C-03</span><h3>Cucina e interni finiti</h3><span class="zn">Lecco · Lago di Lecco</span></div></article>
+      <article class="w w4 rv d1"><div class="ph"><img src="/img/d-edilizia-intonaco-L.webp" srcset="/img/d-edilizia-intonaco-S.webp 480w,/img/d-edilizia-intonaco-L.webp 900w" sizes="(max-width:900px) 92vw,55vw" width="900" height="900" loading="lazy" alt="Intonaco fresco steso su una parete" style="object-position:50% 45%"></div><div class="meta"><span class="id">C-04</span><h3>Intonaci e finiture</h3><span class="zn">Mandello del Lario · Lecco</span></div></article>
     </div>
     <p class="works-note">Foto dimostrative del sito: sostituibili con i tuoi cantieri reali.</p>
   </div>
@@ -281,6 +297,7 @@ footer b{color:var(--paper);font-family:var(--d)}
 <section class="sec" id="metodo" aria-labelledby="t-met">
   <div class="wrap">
     <div class="sec-head"><p class="tag rv"><b>05</b>Metodo</p><h2 id="t-met" class="rv d1">Quattro fasi, nessuna sorpresa.</h2></div>
+    <figure class="fig wide rv"><img src="/img/d-edilizia-sopralluogo-L.webp" srcset="/img/d-edilizia-sopralluogo-S.webp 700w,/img/d-edilizia-sopralluogo-L.webp 1200w" sizes="(max-width:1360px) 92vw,1250px" width="1200" height="800" loading="lazy" alt="Sopralluogo in cantiere con misure e progetto alla mano"><figcaption><span>Il sopralluogo, in cantiere</span><span>Fase 01</span></figcaption></figure>
     <div class="proc" id="proc">
       <div class="rail" aria-hidden="true"><i id="rail"></i></div>
       <div class="step"><span class="dot" aria-hidden="true"></span><div class="k">01</div><div><h3>Sopralluogo</h3><p>Veniamo in cantiere, misuriamo, guardiamo lo stato reale e ascoltiamo cosa vuoi ottenere.</p><small>Su appuntamento</small></div></div>
@@ -343,7 +360,8 @@ footer b{color:var(--paper);font-family:var(--d)}
 
 <script>
 (function(){
-var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var mock=document.documentElement.classList.contains('mock');
+var rm=mock||matchMedia('(prefers-reduced-motion:reduce)').matches;
 var $=function(s){return document.querySelector(s)};
 var hd=$('#hd'),prog=$('#prog'),rail=$('#rail'),proc=$('#proc'),steps=[].slice.call(document.querySelectorAll('.step'));
 /* scroll: header, progresso pagina, linea processo */
@@ -364,19 +382,20 @@ addEventListener('resize',onScroll);onScroll();
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
   if(e.target.id==='map')e.target.classList.add('in');
   e.target.querySelectorAll('[data-c]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+document.querySelectorAll('.rv').forEach(function(el){if(mock){el.classList.add('in');el.querySelectorAll('[data-c]').forEach(count)}else io.observe(el)});
 function count(el){var to=+el.dataset.c;if(rm){el.textContent=to;return}var t0=performance.now(),d=1400;
   (function f(t){var k=Math.min(1,(t-t0)/d);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
 /* slider prima/dopo */
 var c=$('#cmp'),drag=false;
-function setP(v){v=Math.max(0,Math.min(100,v));c.style.setProperty('--p',v+'%');c.setAttribute('aria-valuenow',Math.round(v))}
+function setP(v){v=Math.max(0,Math.min(100,v));c.style.setProperty('--p',v+'%');c.setAttribute('aria-valuenow',Math.round(v));c.setAttribute('aria-valuetext',Math.round(v)+'% prima, '+(100-Math.round(v))+'% dopo')}
 function fromX(x){var r=c.getBoundingClientRect();setP((x-r.left)/r.width*100)}
 c.addEventListener('pointerdown',function(e){drag=true;c.setPointerCapture(e.pointerId);fromX(e.clientX)});
 c.addEventListener('pointermove',function(e){if(drag)fromX(e.clientX)});
 c.addEventListener('pointerup',function(){drag=false});c.addEventListener('pointercancel',function(){drag=false});
 c.addEventListener('keydown',function(e){var v=+c.getAttribute('aria-valuenow');
   if(e.key==='ArrowLeft'||e.key==='ArrowDown'){setP(v-5);e.preventDefault()}
-  if(e.key==='ArrowRight'||e.key==='ArrowUp'){setP(v+5);e.preventDefault()}});
+  if(e.key==='ArrowRight'||e.key==='ArrowUp'){setP(v+5);e.preventDefault()}
+  if(e.key==='Home'){setP(0);e.preventDefault()}if(e.key==='End'){setP(100);e.preventDefault()}});
 if(!rm){var seen=false,io2=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!seen){seen=true;var t0=performance.now();
   (function f(t){var k=Math.min(1,(t-t0)/1800);if(drag)return;var e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;setP(15+70*Math.sin(e*Math.PI)*0.5+ (35*e));if(k<1)requestAnimationFrame(f)})(t0)}},{threshold:.6});io2.observe(c)}
 /* menu */
@@ -391,6 +410,7 @@ fm.addEventListener('submit',function(e){e.preventDefault();
   fm.querySelectorAll('input,select,textarea').forEach(function(i){i.style.borderColor=''});
   $('#ok').classList.add('show');fm.reset();$('#ok').scrollIntoView({block:'nearest'})});
 /* etichetta */
+if(mock){$('#map').classList.add('in');steps.forEach(function(s){s.classList.add('on')})}
 $('#ubgx').addEventListener('click',function(){$('#ubg').classList.add('x')});
 })();
 </script>

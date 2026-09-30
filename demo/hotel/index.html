@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/hotel-wide-1200.webp" fetchpriority="high">
 <style>
 :root{
   --bg:#FBF8F3; --sand:#EFE7DA; --sand-2:#DCCFBB; --lake:#9DB4C4; --lake-d:#3E5C73; --ink:#2A2F33; --mute:#5E656A; --line:rgba(42,47,51,.12);
@@ -237,7 +238,9 @@ h2 em{font-size:1.08em}
   .book .fld.g{grid-column:1}
   .nights{grid-column:2;grid-row:2;min-width:0;flex-direction:row;gap:8px;align-items:center;justify-content:center}
   .nights small{display:inline;letter-spacing:.1em}
-  .hero-txt{bottom:calc(var(--barh) + 78px)}
+  .hero-txt{bottom:calc(var(--barh) + 96px)}
+  .demo-pill{bottom:calc(var(--barh) + 6px)}
+  .demo-pill a{min-height:44px}
   .book .cta{grid-column:1/-1;min-height:50px}
   .book{bottom:8px;padding:6px;border-radius:18px}
   .fld{padding:4px 12px;min-height:52px}
@@ -322,21 +325,28 @@ h2 em{font-size:1.08em}
   <div class="track" id="track" tabindex="0" role="region" aria-label="Camere" data-i18n-aria="rAria">
     <article class="room">
       <div class="ph">
-        <img src="/img/hotel-900.webp" width="900" height="1125" loading="lazy" alt="Camera con finestra aperta sul lago, letto in lino bianco e vassoio della colazione" data-i18n-alt="r1Alt">
+        <img src="/img/d-hotel-camera-lago-L.webp" srcset="/img/d-hotel-camera-lago-S.webp 700w, /img/d-hotel-camera-lago-L.webp 1200w" sizes="(max-width:760px) 80vw, 560px" width="1200" height="800" loading="lazy" alt="Camera con finestra aperta sul lago, letto in lino bianco e vassoio della colazione" data-i18n-alt="r1Alt">
         <div class="go"><span data-i18n="rGo">Verifica le date</span><button type="button" data-book data-i18n="rBtn">Prenota</button></div>
       </div>
       <div class="cap"><h3 data-i18n="r1T">Camera Lago</h3><div class="meta" data-i18n="r1M">Vista lago · 2 ospiti</div><p data-i18n="r1P">Finestre aperte sull&rsquo;acqua e lino bianco. La luce del mattino arriva prima della sveglia.</p></div>
     </article>
     <article class="room">
       <div class="ph">
-        <img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" style="object-position:38% 50%" alt="Terrazza con tavolo apparecchiato e vista sul lago e sulle montagne" data-i18n-alt="r2Alt">
+        <img src="/img/d-hotel-suite-terrazza-L.webp" srcset="/img/d-hotel-suite-terrazza-S.webp 700w, /img/d-hotel-suite-terrazza-L.webp 1200w" sizes="(max-width:760px) 80vw, 560px" width="1200" height="800" loading="lazy" alt="Suite con terrazza privata affacciata sul lago" data-i18n-alt="r2Alt">
         <div class="go"><span data-i18n="rGo">Verifica le date</span><button type="button" data-book data-i18n="rBtn">Prenota</button></div>
       </div>
       <div class="cap"><h3 data-i18n="r2T">Suite Terrazza</h3><div class="meta" data-i18n="r2M">Terrazza privata · 2&ndash;3 ospiti</div><p data-i18n="r2P">Un angolo di terrazza tutto tuo, con tavolo per la colazione e ulivi a portata di mano.</p></div>
     </article>
+    <article class="room">
+      <div class="ph">
+        <img src="/img/d-hotel-camera-giardino-L.webp" srcset="/img/d-hotel-camera-giardino-S.webp 700w, /img/d-hotel-camera-giardino-L.webp 1200w" sizes="(max-width:760px) 80vw, 560px" width="1200" height="800" loading="lazy" alt="Camera con letto in lino e finestra sul giardino" data-i18n-alt="r4Alt">
+        <div class="go"><span data-i18n="rGo">Verifica le date</span><button type="button" data-book data-i18n="rBtn">Prenota</button></div>
+      </div>
+      <div class="cap"><h3 data-i18n="r4T">Camera Giardino</h3><div class="meta" data-i18n="r4M">Vista giardino · 2 ospiti</div><p data-i18n="r4P">Silenziosa e fresca, con il verde del giardino alla finestra e un letto in lino da cui non ti alzi presto.</p></div>
+    </article>
     <article class="room more">
       <div class="ph">
-        <img src="/img/hotel-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="" role="presentation">
+        <img src="/img/d-hotel-bagno-L.webp" srcset="/img/d-hotel-bagno-S.webp 520w, /img/d-hotel-bagno-L.webp 900w" sizes="(max-width:760px) 80vw, 560px" width="900" height="1125" loading="lazy" alt="" role="presentation">
         <div class="in">
           <h3 data-i18n="r3T">Non sai quale scegliere?</h3>
           <p data-i18n="r3P">Raccontaci come viaggi: ti consigliamo la camera giusta e ti teniamo il tavolo migliore a colazione.</p>
@@ -351,8 +361,8 @@ h2 em{font-size:1.08em}
 <section class="pad" id="colazione">
   <div class="wrap bf">
     <div class="imgs rv">
-      <div class="a"><img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Colazione con caffè, croissant e succo d&rsquo;arancia sulla terrazza" data-i18n-alt="bAlt1"></div>
-      <div class="b"><img src="/img/ristorante-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Tavolino in marmo con caffè, acqua e una ciotola di olive" data-i18n-alt="bAlt2"></div>
+      <div class="a"><img src="/img/d-hotel-colazione-L.webp" srcset="/img/d-hotel-colazione-S.webp 700w, /img/d-hotel-colazione-L.webp 1200w" sizes="(max-width:1000px) 82vw, 40vw" width="1200" height="800" loading="lazy" alt="Colazione con caffè, croissant e succo d&rsquo;arancia sulla terrazza" data-i18n-alt="bAlt1"></div>
+      <div class="b"><img src="/img/d-hotel-dettaglio-lino-L.webp" srcset="/img/d-hotel-dettaglio-lino-S.webp 480w, /img/d-hotel-dettaglio-lino-L.webp 900w" sizes="(max-width:1000px) 30vw, 20vw" width="900" height="900" loading="lazy" alt="Dettaglio di lino bianco e ceramica sul tavolo della colazione" data-i18n-alt="bAlt2"></div>
     </div>
     <div class="rv" style="--d:.12s">
       <span class="eyebrow" data-i18n="bEy">Colazione</span>
@@ -369,7 +379,7 @@ h2 em{font-size:1.08em}
 
 <section class="around pad" id="dintorni">
   <div class="wrap ar">
-    <div class="pic rv"><img src="/img/ristorante-900.webp" width="900" height="1125" loading="lazy" alt="Tramonto sul lago visto da un tavolo in riva all&rsquo;acqua" data-i18n-alt="aAlt"></div>
+    <div class="pic rv"><img src="/img/d-hotel-barca-L.webp" srcset="/img/d-hotel-barca-S.webp 700w, /img/d-hotel-barca-L.webp 1200w" sizes="(max-width:1000px) 100vw, 40vw" width="1200" height="800" loading="lazy" alt="Battello sul lago visto dal molo" data-i18n-alt="aAlt"></div>
     <div>
       <div class="rv"><span class="eyebrow" data-i18n="aEy">Intorno a noi</span>
       <h2 data-i18n="aH">Il lago, <em>a modo tuo</em>.</h2></div>
@@ -389,11 +399,11 @@ h2 em{font-size:1.08em}
   <div class="wrap">
     <div class="head rv"><div><span class="eyebrow" data-i18n="gEy">Galleria</span><h2 data-i18n="gH">Qualche <em>istante</em></h2></div></div>
     <div class="mosaic rv" id="mosaic">
-      <button type="button" class="m1" data-full="/img/hotel-wide-1200.webp" data-w="1200" data-h="800" data-i18n-aria="gAria"><img src="/img/hotel-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Terrazza sul lago" data-i18n-alt="g1"></button>
-      <button type="button" class="m2" data-full="/img/hotel-900.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/hotel-900.webp" width="900" height="1125" loading="lazy" alt="Camera con vista lago" data-i18n-alt="g2"></button>
-      <button type="button" class="m3" data-full="/img/ristorante-dettaglio-700.webp" data-w="700" data-h="700" data-i18n-aria="gAria"><img src="/img/ristorante-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Caffè e olive su un tavolino in marmo" data-i18n-alt="g3"></button>
-      <button type="button" class="m4" data-full="/img/hotel-dettaglio-700.webp" data-w="700" data-h="700" data-i18n-aria="gAria"><img src="/img/hotel-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="La chiave della camera sul bancone dell&rsquo;accoglienza" data-i18n-alt="g4"></button>
-      <button type="button" class="m5" data-full="/img/ristorante-900.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/ristorante-900.webp" width="900" height="1125" loading="lazy" style="object-position:50% 30%" alt="Tramonto sul lago dal tavolo" data-i18n-alt="g5"></button>
+      <button type="button" class="m1" data-full="/img/d-hotel-suite-terrazza-L.webp" data-w="1200" data-h="800" data-i18n-aria="gAria"><img src="/img/d-hotel-suite-terrazza-L.webp" srcset="/img/d-hotel-suite-terrazza-S.webp 700w, /img/d-hotel-suite-terrazza-L.webp 1200w" sizes="(max-width:1000px) 100vw, 50vw" width="1200" height="800" loading="lazy" alt="Suite con terrazza sul lago" data-i18n-alt="g1"></button>
+      <button type="button" class="m2" data-full="/img/d-hotel-giardino-L.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/d-hotel-giardino-L.webp" srcset="/img/d-hotel-giardino-S.webp 520w, /img/d-hotel-giardino-L.webp 900w" sizes="(max-width:1000px) 50vw, 25vw" width="900" height="1125" loading="lazy" alt="Il giardino della casa" data-i18n-alt="g2"></button>
+      <button type="button" class="m3" data-full="/img/d-hotel-bagno-L.webp" data-w="900" data-h="1125" data-i18n-aria="gAria"><img src="/img/d-hotel-bagno-L.webp" srcset="/img/d-hotel-bagno-S.webp 520w, /img/d-hotel-bagno-L.webp 900w" sizes="(max-width:1000px) 50vw, 25vw" width="900" height="1125" loading="lazy" alt="Bagno con pietra e lino" data-i18n-alt="g3"></button>
+      <button type="button" class="m4" data-full="/img/d-hotel-dettaglio-lino-L.webp" data-w="900" data-h="900" data-i18n-aria="gAria"><img src="/img/d-hotel-dettaglio-lino-L.webp" srcset="/img/d-hotel-dettaglio-lino-S.webp 480w, /img/d-hotel-dettaglio-lino-L.webp 900w" sizes="(max-width:1000px) 50vw, 25vw" width="900" height="900" loading="lazy" alt="Dettaglio di lino bianco" data-i18n-alt="g4"></button>
+      <button type="button" class="m5" data-full="/img/d-hotel-camera-giardino-L.webp" data-w="1200" data-h="800" data-i18n-aria="gAria"><img src="/img/d-hotel-camera-giardino-L.webp" srcset="/img/d-hotel-camera-giardino-S.webp 700w, /img/d-hotel-camera-giardino-L.webp 1200w" sizes="(max-width:1000px) 50vw, 50vw" width="1200" height="800" loading="lazy" alt="Camera con vista sul giardino" data-i18n-alt="g5"></button>
     </div>
   </div>
 </section>
@@ -455,6 +465,7 @@ h2 em{font-size:1.08em}
 'use strict';
 var D=document,H=D.documentElement,$=function(s,r){return (r||D).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s))};
 H.classList.add('js');
+var MOCK=/[?&]mock/.test(location.search);
 var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- i18n ---------- */
@@ -465,18 +476,19 @@ iEy:'La casa',iH:'Un posto dove <em>rallentare</em>.',iP:'Casa Ortica è una vec
 f1:'Vista lago da ogni camera',f2:'Colazione in terrazza, tra gli ulivi',f3:'Il battello per i borghi a due passi',
 rEy:'Dormire',rH:'Le <em>camere</em>',prev:'Precedente',next:'Successiva',rAria:'Camere',rGo:'Verifica le date',rBtn:'Prenota',
 r1Alt:'Camera con finestra aperta sul lago, letto in lino bianco e vassoio della colazione',r1T:'Camera Lago',r1M:'Vista lago · 2 ospiti',r1P:'Finestre aperte sull’acqua e lino bianco. La luce del mattino arriva prima della sveglia.',
-r2Alt:'Terrazza con tavolo apparecchiato e vista sul lago e sulle montagne',r2T:'Suite Terrazza',r2M:'Terrazza privata · 2–3 ospiti',r2P:'Un angolo di terrazza tutto tuo, con tavolo per la colazione e ulivi a portata di mano.',
+r2Alt:'Suite con terrazza privata affacciata sul lago',r2T:'Suite Terrazza',r2M:'Terrazza privata · 2–3 ospiti',r2P:'Un angolo di terrazza tutto tuo, con tavolo per la colazione e ulivi a portata di mano.',
+r4Alt:'Camera con letto in lino e finestra sul giardino',r4T:'Camera Giardino',r4M:'Vista giardino · 2 ospiti',r4P:'Silenziosa e fresca, con il verde del giardino alla finestra e un letto in lino da cui non ti alzi presto.',
 r3T:'Non sai quale scegliere?',r3P:'Raccontaci come viaggi: ti consigliamo la camera giusta e ti teniamo il tavolo migliore a colazione.',r3B:'Scrivici',
 bEy:'Colazione',bH:'Colazione <em>senza orologio</em>.',bP:'Pane e focacce del forno del paese, torte fatte in casa, frutta di stagione, uova e caffè dalla moka. Si serve in terrazza dalle prime luci fino a tarda mattina.',
-b1:'Prodotti locali e di stagione',b2:'Opzioni vegetariane, senza glutine e senza lattosio su richiesta',b3:'Servita anche in camera, se preferisci',bAlt1:'Colazione con caffè, croissant e succo d’arancia sulla terrazza',bAlt2:'Tavolino in marmo con caffè, acqua e una ciotola di olive',
-aEy:'Intorno a noi',aH:'Il lago, <em>a modo tuo</em>.',aAlt:'Tramonto sul lago visto da un tavolo in riva all’acqua',
+b1:'Prodotti locali e di stagione',b2:'Opzioni vegetariane, senza glutine e senza lattosio su richiesta',b3:'Servita anche in camera, se preferisci',bAlt1:'Colazione con caffè, croissant e succo d’arancia sulla terrazza',bAlt2:'Dettaglio di lino bianco e ceramica sul tavolo della colazione',
+aEy:'Intorno a noi',aH:'Il lago, <em>a modo tuo</em>.',aAlt:'Battello sul lago visto dal molo',
 a1T:'Battello per i borghi',a1G:'In battello',a1P:'Sali al molo vicino e scendi dove ti pare: ville, giardini e piccoli porti.',
 a2T:'Passeggiata sul lungolago',a2G:'A piedi',a2P:'Un tratto pianeggiante sull’acqua, perfetto prima o dopo colazione.',
 a3T:'Sentieri e belvedere',a3G:'A piedi',a3P:'Percorsi tra ulivi e boschi, da mezza giornata a giornata intera.',
 a4T:'Ville e giardini',a4G:'In battello',a4P:'Dimore storiche e parchi fioriti da visitare con calma.',
 a5T:'Cena in trattoria',a5G:'A piedi',a5P:'Pesce di lago e piatti di casa: ti indichiamo i tavoli che preferiamo.',
 a6T:'Kayak e vela',a6G:'In auto',a6P:'Noleggio e uscite con guida, anche per chi parte da zero.',
-gEy:'Galleria',gH:'Qualche <em>istante</em>',gAria:'Ingrandisci la foto',gAria2:'Galleria',g1:'Terrazza sul lago',g2:'Camera con vista lago',g3:'Caffè e olive su un tavolino in marmo',g4:'La chiave della camera sul bancone dell’accoglienza',g5:'Tramonto sul lago dal tavolo',
+gEy:'Galleria',gH:'Qualche <em>istante</em>',gAria:'Ingrandisci la foto',gAria2:'Galleria',g1:'Suite con terrazza sul lago',g2:'Il giardino della casa',g3:'Bagno con pietra e lino',g4:'Dettaglio di lino bianco',g5:'Camera con vista sul giardino',
 vEy:'Dicono di noi',q1:'«Una settimana di silenzio e luce. La colazione in terrazza vale da sola il viaggio.»',q1o:'Milano',q2:'«Il posto giusto da cui partire ogni giorno: padroni di casa attenti, camere silenziose.»',q2o:'Monaco di Baviera',q3:'«Ci hanno consigliato un sentiero e una trattoria: erano esattamente ciò che cercavamo.»',q3o:'Torino',
 cEy:'Contatti',cH:'Scrivici, <em>rispondiamo noi</em>.',cA:'Dove siamo',cT:'Telefono',cC:'Arrivi e partenze',cCv:'Arrivo dalle 15:00 · partenza entro le 11:00',cDemo:'Sito dimostrativo: attività di fantasia.',
 lIn:'Arrivo',lOut:'Partenza',lG:'Ospiti',lN:'notti',chk:'Verifica disponibilità',close:'Chiudi',
@@ -489,18 +501,19 @@ iEy:'The house',iH:'A place to <em>slow down</em>.',iP:'Casa Ortica is an old fa
 f1:'Lake view from every room',f2:'Breakfast on the terrace, among the olive trees',f3:'The boat to the lakeside villages is a short walk away',
 rEy:'Stay',rH:'The <em>rooms</em>',prev:'Previous',next:'Next',rAria:'Rooms',rGo:'Check dates',rBtn:'Book',
 r1Alt:'Room with an open window onto the lake, white linen bed and a breakfast tray',r1T:'Lake Room',r1M:'Lake view · 2 guests',r1P:'Windows open onto the water and white linen. Morning light arrives before the alarm.',
-r2Alt:'Terrace with a laid table and a view of the lake and the mountains',r2T:'Terrace Suite',r2M:'Private terrace · 2–3 guests',r2P:'A corner of terrace all your own, with a breakfast table and olive trees within reach.',
+r2Alt:'Suite with a private terrace over the lake',r2T:'Terrace Suite',r2M:'Private terrace · 2–3 guests',r2P:'A corner of terrace all your own, with a breakfast table and olive trees within reach.',
+r4Alt:'Room with a linen bed and a window onto the garden',r4T:'Garden Room',r4M:'Garden view · 2 guests',r4P:'Quiet and cool, with the garden at the window and a linen bed you will not leave early.',
 r3T:'Not sure which to pick?',r3P:'Tell us how you travel: we will suggest the right room and keep the best breakfast table for you.',r3B:'Get in touch',
 bEy:'Breakfast',bH:'Breakfast <em>without a clock</em>.',bP:'Bread and focaccia from the village bakery, home-made cakes, seasonal fruit, eggs and moka coffee. Served on the terrace from first light until late morning.',
-b1:'Local, seasonal produce',b2:'Vegetarian, gluten-free and lactose-free options on request',b3:'Also served in your room, if you prefer',bAlt1:'Breakfast with coffee, croissant and orange juice on the terrace',bAlt2:'Marble table with coffee, water and a bowl of olives',
-aEy:'Around us',aH:'The lake, <em>your way</em>.',aAlt:'Sunset over the lake seen from a table by the water',
+b1:'Local, seasonal produce',b2:'Vegetarian, gluten-free and lactose-free options on request',b3:'Also served in your room, if you prefer',bAlt1:'Breakfast with coffee, croissant and orange juice on the terrace',bAlt2:'White linen and ceramic detail on the breakfast table',
+aEy:'Around us',aH:'The lake, <em>your way</em>.',aAlt:'Boat on the lake seen from the pier',
 a1T:'Boat to the villages',a1G:'By boat',a1P:'Hop on at the nearby pier and get off wherever you like: villas, gardens and tiny harbours.',
 a2T:'Lakeside walk',a2G:'On foot',a2P:'A flat stretch along the water, perfect before or after breakfast.',
 a3T:'Trails and viewpoints',a3G:'On foot',a3P:'Paths through olive groves and woods, from half a day to a full one.',
 a4T:'Villas and gardens',a4G:'By boat',a4P:'Historic homes and flowering parks to visit at your own pace.',
 a5T:'Dinner at a trattoria',a5G:'On foot',a5P:'Lake fish and home cooking: we will point you to our favourite tables.',
 a6T:'Kayak and sailing',a6G:'By car',a6P:'Rentals and guided outings, also for complete beginners.',
-gEy:'Gallery',gH:'A few <em>moments</em>',gAria:'Enlarge photo',gAria2:'Gallery',g1:'Terrace over the lake',g2:'Room with a lake view',g3:'Coffee and olives on a marble table',g4:'The room key on the reception desk',g5:'Sunset over the lake from the table',
+gEy:'Gallery',gH:'A few <em>moments</em>',gAria:'Enlarge photo',gAria2:'Gallery',g1:'Suite with a terrace over the lake',g2:'The garden of the house',g3:'Bathroom with stone and linen',g4:'White linen detail',g5:'Room with a garden view',
 vEy:'Guests say',q1:'“A week of silence and light. Breakfast on the terrace is worth the trip on its own.”',q1o:'Milan',q2:'“The right base to set out from every day: attentive hosts, quiet rooms.”',q2o:'Munich',q3:'“They suggested a trail and a trattoria: exactly what we were looking for.”',q3o:'Turin',
 cEy:'Contact',cH:'Write to us, <em>we answer in person</em>.',cA:'Where we are',cT:'Phone',cC:'Arrival and departure',cCv:'Check-in from 3 pm · check-out by 11 am',cDemo:'Demo website: fictional business.',
 lIn:'Check-in',lOut:'Check-out',lG:'Guests',lN:'nights',chk:'Check availability',close:'Close',
@@ -553,7 +566,7 @@ function onScroll(){
 addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
 
 /* ---------- reveal ---------- */
-if('IntersectionObserver' in window&&!RM){
+if('IntersectionObserver' in window&&!RM&&!MOCK){
   var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   $$('.rv').forEach(function(e){io.observe(e)});
 }else $$('.rv').forEach(function(e){e.classList.add('in')});
@@ -641,7 +654,7 @@ function auto(){clearInterval(qt);if(!RM)qt=setInterval(function(){q(qi+1)},7000
 auto();
 
 /* ---------- cursor (desktop only) ---------- */
-if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!RM){
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!RM&&!MOCK){
   var c=$('#cur'),cx=0,cy=0,tx=0,ty=0,run=false;
   addEventListener('mousemove',function(e){
     tx=e.clientX;ty=e.clientY;c.classList.add('on');
@@ -659,7 +672,8 @@ $('#pillX').addEventListener('click',function(){$('#pill').style.display='none'}
 
 /* init */
 var sl=null;try{sl=localStorage.getItem('co-lang')}catch(e){}
-if(sl==='en')applyLang('en');
+if(MOCK){var pl=$('#pill');if(pl)pl.style.display='none';var cu=$('#cur');if(cu)cu.style.display='none'}
+if(sl==='en')applyLang('en');else applyLang('it');
 onScroll();
 })();
 </script>

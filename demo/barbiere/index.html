@@ -7,6 +7,8 @@
 <meta name="description" content="Bottega Nero, barberia classica a Lecco: taglio, barba con panno caldo e rasatura a lama. Prenota online il tuo posto in pochi clic.">
 <meta name="robots" content="noindex,follow">
 <meta name="theme-color" content="#0f0d0b">
+<script>if(/[?&]mock/.test(location.search))document.documentElement.className="mock"</script>
+<link rel="preload" as="image" href="/img/d-barbiere-poltrona-L.webp" imagesrcset="/img/d-barbiere-poltrona-S.webp 520w,/img/d-barbiere-poltrona-L.webp 900w" imagesizes="(max-width:700px) 80vw,560px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -96,7 +98,7 @@ section{padding:clamp(72px,11vw,150px) 0}
 /* barbieri */
 .team{background:var(--bg2)}
 .tg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
-.tg img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.4) contrast(1.05);-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.tg img{width:100%;aspect-ratio:5/4;object-fit:cover;filter:grayscale(.4) contrast(1.05);-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
 .roles{list-style:none;margin-top:32px}
 .roles li{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
 .roles li:last-child{border-bottom:1px solid var(--line)}
@@ -104,14 +106,27 @@ section{padding:clamp(72px,11vw,150px) 0}
 .roles h3{font-size:1.9rem;margin-bottom:4px}
 .roles p{color:var(--mute);font-size:.95rem}
 @media(max-width:800px){.tg{grid-template-columns:1fr}}
+.ban{margin-bottom:40px;overflow:hidden}
+.ban img{width:100%;aspect-ratio:21/9;object-fit:cover;filter:grayscale(.35) brightness(.85)}
+@media(max-width:600px){.ban img{aspect-ratio:3/2}}
 /* galleria */
 .gal{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
 .gal figure{overflow:hidden;position:relative;background:var(--bg2)}
+.gal button.ph{display:block;width:100%;height:100%;padding:0;cursor:zoom-in}
 .gal img{width:100%;height:100%;object-fit:cover;filter:grayscale(.5) brightness(.85);transition:transform 1.2s var(--ease),filter .6s}
 .gal figure:hover img{transform:scale(1.06);filter:none}
 .gal figcaption{position:absolute;left:0;bottom:0;padding:10px 14px;background:var(--bg);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-.g1{grid-column:span 7;aspect-ratio:3/2}.g2{grid-column:span 5;aspect-ratio:1}.g3{grid-column:span 4;aspect-ratio:4/5}.g4{grid-column:span 4;aspect-ratio:4/5}.g5{grid-column:span 4;aspect-ratio:4/5}
-@media(max-width:700px){.g1,.g2{grid-column:span 12}.g3,.g4{grid-column:span 6}.g5{grid-column:span 12;aspect-ratio:3/2}}
+.g1{grid-column:span 7;aspect-ratio:3/2}.g2{grid-column:span 5;aspect-ratio:1}.g3{grid-column:span 6;aspect-ratio:1}.g4{grid-column:span 6;aspect-ratio:1}
+@media(max-width:700px){.g1{grid-column:span 12}.g2{grid-column:span 12}.g3,.g4{grid-column:span 6}}
+.lb{border:0;background:rgba(15,13,11,.96);color:var(--ivory);width:100vw;height:100vh;max-width:none;max-height:none;padding:16px;margin:0}
+.lb[open]{display:flex;align-items:center;justify-content:center}
+.lb::backdrop{background:rgba(0,0,0,.9)}
+.lb figure{max-width:min(1100px,100%);max-height:100%;display:flex;flex-direction:column;gap:10px;align-items:center}
+.lb img{max-width:100%;max-height:calc(100vh - 110px);width:auto;height:auto;object-fit:contain}
+.lb figcaption{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.lb button{position:absolute;width:48px;height:48px;background:var(--bg2);border:1px solid var(--line);font-size:1.5rem;line-height:1}
+.lb button:hover{border-color:var(--brass)}
+.lb .x{top:12px;right:12px}.lb .pv{left:12px;top:50%}.lb .nx{right:12px;top:50%}
 /* prenota */
 .book{border-block:1px solid var(--line)}
 .bk{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,5vw,72px);align-items:start}
@@ -143,13 +158,16 @@ section{padding:clamp(72px,11vw,150px) 0}
 .free b{color:var(--brass);font-family:Anton;font-weight:400;font-size:1.6rem;margin:0 4px}
 @media(max-width:900px){.bk{grid-template-columns:1fr}.summary{position:static}}
 /* info */
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.dv{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:clamp(24px,5vw,72px);align-items:center}
+.dv>img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.35) brightness(.9)}
+.info{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4vw,56px)}
+.info>div:last-child{grid-column:1/-1}
 .info h3{font-size:2.2rem;margin-bottom:16px}
 .info p,.info li{color:var(--mute)}
 .info ul{list-style:none}
 .info li{display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:8px 0}
 .info a{color:var(--ivory);border-bottom:1px solid var(--brass)}
-@media(max-width:800px){.info{grid-template-columns:1fr}}
+@media(max-width:800px){.dv{grid-template-columns:1fr}.dv>img{aspect-ratio:4/3;object-position:50% 40%}.info{grid-template-columns:1fr}}
 footer{padding:36px 0 96px;border-top:1px solid var(--line);color:var(--mute);font-size:.85rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* etichetta */
@@ -158,6 +176,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tag a:hover{text-decoration:underline}
 .tag button{width:44px;height:44px;border-radius:50%;color:#555;font-size:18px;line-height:1}
 .tag button:hover{color:#000}
+.mock .fx{opacity:1;transform:none;transition:none}.mock .hero h1 span{transform:none;animation:none}.mock .tag,.mock .spot{display:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fx{opacity:1;transform:none}.hero h1 span{transform:none}.spot{display:none}}
 </style>
 </head>
@@ -171,7 +190,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <main id="top">
 <section class="hero" id="hero" style="padding-bottom:56px">
 <div class="spot" id="spot" aria-hidden="true"></div>
-<div class="hero-photo" aria-hidden="false"><img id="hp" src="/img/barbiere-900.webp" srcset="/img/barbiere-600.webp 600w,/img/barbiere-900.webp 900w" sizes="(max-width:700px) 80vw,560px" width="900" height="1125" alt="Barbiere al lavoro con la lama su una barba, in una poltrona di pelle scura" fetchpriority="high"></div>
+<div class="hero-photo" aria-hidden="false"><img id="hp" src="/img/d-barbiere-poltrona-L.webp" srcset="/img/d-barbiere-poltrona-S.webp 520w,/img/d-barbiere-poltrona-L.webp 900w" sizes="(max-width:700px) 80vw,560px" width="900" height="1125" alt="Poltrona da barbiere in pelle scura con asciugamano, sotto una lampada in ottone" fetchpriority="high"></div>
 <div class="wrap" style="width:min(1240px,100% - 32px)">
 <div class="live" id="liveTop"><b></b><span>Oggi liberi: <strong id="freeTop">–</strong> posti</span></div>
 <h1 class="d"><div class="reveal-t"><span>Bottega</span></div><div class="reveal-t"><span class="br">Nero</span></div></h1>
@@ -184,11 +203,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="listino"><div class="wrap">
 <div class="sh fx"><div><span class="eyebrow">Listino</span><h2 class="d">Servizi &amp; prezzi</h2></div><p>Prezzi chiari, niente extra a sorpresa. Tocca un servizio per prenotarlo.</p></div>
+<div class="ban fx"><img src="/img/d-barbiere-barba-L.webp" srcset="/img/d-barbiere-barba-S.webp 700w,/img/d-barbiere-barba-L.webp 1200w" sizes="(max-width:1240px) 100vw,1240px" width="1200" height="800" loading="lazy" alt="Barba curata con pennello, panno caldo e rasoio"></div>
 <ul class="menu-list fx" id="lst"></ul>
 </div></section>
 
 <section class="team" id="barbieri"><div class="wrap tg">
-<div class="fx"><img src="/img/barbiere-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Dettaglio degli attrezzi del barbiere: rasoio a lama libera, pennello e forbici"></div>
+<div class="fx"><img src="/img/d-barbiere-specchi-L.webp" srcset="/img/d-barbiere-specchi-S.webp 700w,/img/d-barbiere-specchi-L.webp 1200w" sizes="(max-width:800px) 100vw,600px" width="1200" height="800" loading="lazy" alt="Le postazioni della bottega davanti agli specchi con cornice in ottone"></div>
 <div class="fx"><span class="eyebrow">La bottega</span><h2 class="d" style="font-size:clamp(3rem,7vw,6rem);margin-top:12px">Le mani<br>del mestiere</h2>
 <ul class="roles">
 <li><b>01</b><div><h3 class="d">Maestro barbiere</h3><p>Titolare, trent'anni di poltrona. Forbice e rasoio: taglio classico e rasatura a lama.</p></div></li>
@@ -199,11 +219,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="galleria"><div class="wrap">
 <div class="sh fx"><div><span class="eyebrow">Galleria</span><h2 class="d">Dentro la bottega</h2></div><p>Legno, cuoio, ottone. Un posto dove fermarsi un'ora.</p></div>
 <div class="gal">
-<figure class="g1 fx"><img src="/img/barbiere-wide-1200.webp" srcset="/img/barbiere-wide-700.webp 700w,/img/barbiere-wide-1200.webp 1200w" sizes="(max-width:700px) 100vw,700px" width="1200" height="800" loading="lazy" alt="Interno della barberia con poltrone in pelle e specchi"><figcaption>Il salone</figcaption></figure>
-<figure class="g2 fx"><img src="/img/barbiere-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Rasoio, pennello e panno caldo appoggiati sul bancone"><figcaption>Gli attrezzi</figcaption></figure>
-<figure class="g3 fx"><img src="/img/barbiere-600.webp" width="600" height="750" loading="lazy" alt="Barba curata con la lama, particolare di profilo"><figcaption>La barba</figcaption></figure>
-<figure class="g4 fx"><img src="/img/barbiere-900.webp" width="900" height="1125" loading="lazy" style="object-position:50% 20%" alt="Taglio classico eseguito a forbice sulla poltrona"><figcaption>Il taglio</figcaption></figure>
-<figure class="g5 fx"><img src="/img/barbiere-wide-700.webp" width="700" height="467" loading="lazy" style="object-position:30% 60%" alt="Postazione di lavoro del barbiere con lampade e specchio"><figcaption>La postazione</figcaption></figure>
+<figure class="g1 fx"><button type="button" class="ph" data-full="/img/d-barbiere-prodotti-L.webp" data-alt="Pomate, oli e prodotti per la barba" data-cap="I prodotti" aria-label="Ingrandisci: I prodotti"><img src="/img/d-barbiere-prodotti-L.webp" srcset="/img/d-barbiere-prodotti-S.webp 700w,/img/d-barbiere-prodotti-L.webp 1200w" sizes="(max-width:700px) 100vw,700px" width="1200" height="800" loading="lazy" alt="Pomate, oli e prodotti per la barba"></button><figcaption>I prodotti</figcaption></figure>
+<figure class="g2 fx"><button type="button" class="ph" data-full="/img/d-barbiere-forbici-L.webp" data-alt="Forbici e pettine sul piano di lavoro" data-cap="Il taglio" aria-label="Ingrandisci: Il taglio"><img src="/img/d-barbiere-forbici-L.webp" srcset="/img/d-barbiere-forbici-S.webp 480w,/img/d-barbiere-forbici-L.webp 900w" sizes="(max-width:700px) 100vw,500px" width="900" height="900" loading="lazy" alt="Forbici e pettine sul piano di lavoro"></button><figcaption>Il taglio</figcaption></figure>
+<figure class="g3 fx"><button type="button" class="ph" data-full="/img/d-barbiere-rasoio-L.webp" data-alt="Rasoio a lama libera aperto sul tavolo" data-cap="La rasatura" aria-label="Ingrandisci: La rasatura"><img src="/img/d-barbiere-rasoio-L.webp" srcset="/img/d-barbiere-rasoio-S.webp 480w,/img/d-barbiere-rasoio-L.webp 900w" sizes="(max-width:700px) 50vw,620px" width="900" height="900" loading="lazy" alt="Rasoio a lama libera aperto sul tavolo"></button><figcaption>La rasatura</figcaption></figure>
+<figure class="g4 fx"><button type="button" class="ph" data-full="/img/d-barbiere-asciugamani-L.webp" data-alt="Asciugamani caldi arrotolati per il trattamento viso" data-cap="Il viso" aria-label="Ingrandisci: Il viso"><img src="/img/d-barbiere-asciugamani-L.webp" srcset="/img/d-barbiere-asciugamani-S.webp 480w,/img/d-barbiere-asciugamani-L.webp 900w" sizes="(max-width:700px) 50vw,620px" width="900" height="900" loading="lazy" alt="Asciugamani caldi arrotolati per il trattamento viso"></button><figcaption>Il viso</figcaption></figure>
 </div></div></section>
 
 <section class="book" id="prenota"><div class="wrap">
@@ -227,12 +246,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <p class="note">Demo: nessun dato viene inviato.</p>
 </aside></div></div></section>
 
-<section id="dove"><div class="wrap info">
+<section id="dove"><div class="wrap dv"><img src="/img/d-barbiere-vetrina-L.webp" srcset="/img/d-barbiere-vetrina-S.webp 520w,/img/d-barbiere-vetrina-L.webp 900w" sizes="(max-width:800px) 100vw,400px" width="900" height="1125" loading="lazy" alt="La vetrina della bottega con insegna in ottone e porta a vetri"><div class="info">
 <div class="fx"><h3 class="d">Dove siamo</h3><p>Via del Lungolago 12<br>23900 Lecco (LC)<br><a href="tel:+390000000000">+39 000 000 0000</a></p></div>
 <div class="fx"><h3 class="d">Orari</h3><ul><li><span>Lun</span><span>Chiuso</span></li><li><span>Mar – Ven</span><span>9–13 · 15–19</span></li><li><span>Sab</span><span>9–18</span></li><li><span>Dom</span><span>Chiuso</span></li></ul></div>
 <div class="fx"><h3 class="d">Prima volta?</h3><p>Arriva con dieci minuti di anticipo: ti offriamo un caffè. Disdici gratis fino a 3 ore prima.</p></div>
-</div></section>
+</div></div></section>
 </main>
+<dialog class="lb" id="lb" aria-label="Foto ingrandita"><figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure><button type="button" class="x" id="lbx" aria-label="Chiudi">×</button><button type="button" class="pv" id="lbp" aria-label="Foto precedente">‹</button><button type="button" class="nx" id="lbn" aria-label="Foto successiva">›</button></dialog>
 <footer><div class="wrap"><span>© Bottega Nero · Attività di fantasia, sito dimostrativo · P.IVA 00000000000</span><span>Via del Lungolago 12, Lecco</span></div></footer>
 
 <div class="tag" id="tag"><a href="/siti-web-barbieri-estetica/">Anteprima realizzata da UBG Media</a><button type="button" aria-label="Chiudi etichetta" onclick="document.getElementById('tag').remove()">×</button></div>
@@ -292,9 +312,18 @@ r();
 var hd=$("hd"),mn=$("mn"),bg=$("bg");
 bg.onclick=function(){var o=mn.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
 mn.addEventListener("click",function(e){if(e.target.tagName==="A"){mn.classList.remove("open");bg.setAttribute("aria-expanded","false")}});
+/* lightbox */
+var lb=$("lb"),ph=[].slice.call(document.querySelectorAll(".gal .ph")),li_=0;
+function show(i){li_=(i+ph.length)%ph.length;var b=ph[li_];$("lbi").src=b.dataset.full;$("lbi").alt=b.dataset.alt;$("lbc").textContent=b.dataset.cap}
+if(lb&&lb.showModal){ph.forEach(function(b,i){b.onclick=function(){show(i);lb.showModal()}});
+$("lbx").onclick=function(){lb.close()};$("lbp").onclick=function(){show(li_-1)};$("lbn").onclick=function(){show(li_+1)};
+lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+lb.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")show(li_-1);if(e.key==="ArrowRight")show(li_+1)})}
 /* reveal */
+var MOCK=document.documentElement.className==="mock";
+if(MOCK){var tg=$("tag");if(tg)tg.remove()}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".fx").forEach(function(el){io.observe(el)});
+document.querySelectorAll(".fx").forEach(function(el){if(MOCK)el.classList.add("in");else io.observe(el)});
 /* scroll: header, marquee, parallax */
 var mq=$("mq"),hp=$("hp"),tk=false;
 function onS(){tk=false;var y=scrollY;hd.classList.toggle("s",y>30);

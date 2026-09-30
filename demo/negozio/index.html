@@ -7,6 +7,8 @@
 <meta name="description" content="Officina Lario: bottega di ceramiche e tessuti di fantasia fatti a mano. Sfoglia il negozio online, spedizioni in tutta Italia o ritiro in bottega.">
 <meta name="robots" content="noindex,follow">
 <meta name="theme-color" content="#F6EEDF">
+<script>if(/[?&]mock/.test(location.search))document.documentElement.className="mock"</script>
+<link rel="preload" as="image" href="/img/d-negozio-vaso-L.webp" imagesrcset="/img/d-negozio-vaso-S.webp 480w, /img/d-negozio-vaso-L.webp 900w" imagesizes="(max-width:980px) 92vw, 440px" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -88,19 +90,16 @@ section{padding:clamp(70px,10vw,130px) 0}
 .filters button{min-height:44px;padding:.5rem 1.2rem;border-radius:999px;font-weight:500;box-shadow:inset 0 0 0 2px var(--ink);transition:background .3s,color .3s,transform .3s var(--ease)}
 .filters button:hover{transform:translateY(-2px)}
 .filters button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
 .card{position:relative;display:flex;flex-direction:column;transition:opacity .4s,transform .5s var(--ease)}
 .card.out{opacity:0;transform:scale(.92)}
 .card[hidden]{display:none}
 .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--c,var(--cream2));border-radius:var(--r);perspective:800px}
-.card:nth-child(4n+1){--r:46% 54% 40% 60%/50% 44% 56% 50%}
-.card:nth-child(4n+2){--r:30px 30px 30px 120px}
-.card:nth-child(4n+3){--r:120px 30px 30px 30px}
-.card:nth-child(4n){--r:50% 50% 30px 30px}
-.ph .l{position:absolute;inset:-6%;background-repeat:no-repeat;transition:transform .8s var(--ease),opacity .6s}
-.ph .l.b{opacity:0;transform:rotate(8deg) scale(1.1)}
-.card:hover .l.a,.card:focus-within .l.a{transform:rotate(-7deg) scale(1.2);opacity:0}
-.card:hover .l.b,.card:focus-within .l.b{opacity:1;transform:rotate(0) scale(1)}
+.card:nth-child(3n+1){--r:46% 54% 40% 60%/50% 44% 56% 50%}
+.card:nth-child(3n+2){--r:30px 30px 30px 120px}
+.card:nth-child(3n){--r:120px 30px 30px 30px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.card:hover .ph img,.card:focus-within .ph img{transform:scale(1.1) rotate(-1.5deg)}
 .tag{position:absolute;top:6px;left:6px;z-index:2;border:1.5px solid var(--ink);padding:.2rem .7rem;border-radius:999px;background:var(--cream);font-size:.78rem;font-weight:700}
 .card h3{font-size:1.5rem;margin-top:1rem}
 .card .m{color:var(--ink2);font-size:.95rem}
@@ -112,14 +111,9 @@ section{padding:clamp(70px,10vw,130px) 0}
 /* story */
 .story{background:var(--cream2);border-radius:60px 60px 0 0}
 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:70px;gap:14px}
-.mosaic figure{overflow:hidden;background:var(--cream)}
-.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
-.mosaic figure:hover img{transform:scale(1.08) rotate(1.5deg)}
-.m1{grid-column:1/5;grid-row:1/6;border-radius:200px 200px 24px 24px}
-.m2{grid-column:5/7;grid-row:2/5;border-radius:50% 50% 50% 50%/40% 40% 60% 60%}
-.m3{grid-column:1/3;grid-row:6/9;border-radius:24px 24px 24px 100px}
-.m4{grid-column:3/7;grid-row:5/9;border-radius:24px 100px 24px 24px}
+.bott{overflow:hidden;background:var(--cream);border-radius:24px 160px 24px 160px;aspect-ratio:3/2}
+.bott img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.bott:hover img{transform:scale(1.05) rotate(1deg)}
 .story h2{margin:.7rem 0 1.4rem}
 .story p{color:var(--ink2);margin-bottom:1rem;max-width:52ch}
 .sign{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--cobalt);margin-top:1.4rem}
@@ -128,7 +122,10 @@ section{padding:clamp(70px,10vw,130px) 0}
 .vals li:nth-child(1){background:var(--rosa)}.vals li:nth-child(2){background:var(--ocra)}.vals li:nth-child(3){background:var(--cobalt);color:#fff}
 /* ship */
 .ship{background:var(--cream2);padding-top:0}
-.ship h2{margin:.7rem 0 2.2rem;max-width:16ch}
+.shiphead{display:grid;grid-template-columns:1fr minmax(0,340px);gap:clamp(1.5rem,5vw,4rem);align-items:end;margin-bottom:2.2rem}
+.ship h2{margin:.7rem 0 0;max-width:16ch}
+.pack{overflow:hidden;background:var(--cream);border-radius:999px 999px 30px 30px;aspect-ratio:4/5}
+.pack img{width:100%;height:100%;object-fit:cover}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .sc2{padding:2rem;border-radius:32px;position:relative;overflow:hidden;transition:transform .5s var(--ease)}
 .sc2:hover{transform:translateY(-6px) rotate(-.6deg)}
@@ -159,7 +156,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 .x:hover{transform:rotate(90deg)}
 .items{flex:1;overflow:auto;padding:1rem 1.5rem;list-style:none}
 .it{display:grid;grid-template-columns:72px 1fr auto;gap:.9rem;align-items:center;padding:.9rem 0;border-bottom:1px solid rgba(36,31,28,.12);animation:fadein .5s var(--ease) forwards;opacity:0}
-.it .th{width:72px;height:72px;border-radius:20px;background-repeat:no-repeat}
+.it .th{width:72px;height:72px;border-radius:20px;object-fit:cover;background:var(--cream2)}
 .it b{font-family:var(--serif);font-weight:400;font-size:1.15rem;display:block;line-height:1.15}
 .it small{color:var(--ink2)}
 .q{display:inline-flex;align-items:center;gap:.2rem;margin-top:.3rem}
@@ -187,6 +184,10 @@ footer a:hover{color:#fff;text-decoration:underline}
 .ubg{position:fixed;right:14px;bottom:14px;z-index:130;display:flex;align-items:center;background:rgba(255,255,255,.96);color:#222;font:500 12px/1 system-ui,sans-serif;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.2)}
 .ubg a{padding:12px 6px 12px 14px;text-decoration:none;min-height:44px;display:flex;align-items:center}
 .ubg button{width:44px;height:44px;font-size:16px;color:#555}
+/* mock */
+.mock .ubg{display:none!important}
+.mock .rv,.mock .fade{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+.mock .hero h1 .w span{transform:none!important;animation:none!important}
 /* reveal */
 .rv{opacity:0;transform:translateY(34px) rotate(1deg);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
 .rv.in{opacity:1;transform:none}
@@ -194,6 +195,8 @@ footer a:hover{color:#fff;text-decoration:underline}
  .grid{grid-template-columns:repeat(2,1fr)}
  .hero .wrap,.story .wrap{grid-template-columns:1fr}
  .arch{margin-top:1.5rem;margin-right:6%}
+ .shiphead{grid-template-columns:1fr}
+ .pack{max-width:300px}
  .sg{grid-template-columns:1fr}
  footer .wrap{grid-template-columns:1fr 1fr}
  footer .wrap>div:first-child{grid-column:1/-1}
@@ -210,7 +213,6 @@ footer a:hover{color:#fff;text-decoration:underline}
  .card h3{font-size:1.2rem}.price{font-size:1.15rem}
  .row{flex-direction:column;align-items:flex-start}
  .add{width:100%}
- .mosaic{grid-auto-rows:44px;gap:10px}
  footer .wrap{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -266,8 +268,8 @@ footer a:hover{color:#fff;text-decoration:underline}
   <div class="arch fade">
    <span class="dot1" aria-hidden="true"></span>
    <div class="plx" id="plx">
-    <div class="a"><img src="/img/negozio-900.webp" width="900" height="1125" fetchpriority="high" alt="Interno luminoso della bottega Officina Lario con mensole di ceramiche, lini piegati e vista sul lago"></div>
-    <div class="blob"><img src="/img/negozio-dettaglio-700.webp" width="700" height="700" alt="Mani che chiudono un pacco in carta kraft con cordino e cartellino" loading="lazy"></div>
+    <div class="a"><img src="/img/d-negozio-vaso-L.webp" srcset="/img/d-negozio-vaso-S.webp 480w, /img/d-negozio-vaso-L.webp 900w" sizes="(max-width:980px) 92vw, 440px" width="900" height="900" fetchpriority="high" decoding="async" alt="Vaso in ceramica smaltata blu con fiori secchi, appoggiato su un lino grezzo accanto alla finestra"></div>
+    <div class="blob"><img src="/img/d-negozio-ciotola-S.webp" srcset="/img/d-negozio-ciotola-S.webp 480w, /img/d-negozio-ciotola-L.webp 900w" sizes="200px" width="900" height="900" alt="Ciotola in ceramica smaltata fatta a mano" loading="lazy"></div>
     <div class="stamp" aria-hidden="true"><span>fatto<b>a mano</b>sul lago</span></div>
    </div>
   </div>
@@ -293,12 +295,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 
 <section class="story" id="bottega">
  <div class="wrap">
-  <div class="mosaic">
-   <figure class="m1 rv"><img src="/img/negozio-wide-1200.webp" width="1200" height="800" loading="lazy" alt="Il banco di legno della bottega con ciotola cobalto, limoni e lini piegati" style="object-position:62% 50%"></figure>
-   <figure class="m2 rv" style="--d:1"><img src="/img/negozio-600.webp" width="600" height="750" loading="lazy" alt="Ceramiche e tessuti esposti sulle mensole di legno"></figure>
-   <figure class="m3 rv" style="--d:2"><img src="/img/negozio-dettaglio-700.webp" width="700" height="700" loading="lazy" alt="Confezione di un ordine con carta kraft e cordino" style="object-position:30% 50%"></figure>
-   <figure class="m4 rv" style="--d:3"><img src="/img/negozio-wide-700.webp" width="700" height="467" loading="lazy" alt="Vasi e brocche in ceramica chiara davanti alla finestra sul lago"></figure>
-  </div>
+  <figure class="bott rv"><img src="/img/d-negozio-bottega-S.webp" srcset="/img/d-negozio-bottega-S.webp 700w,/img/d-negozio-bottega-L.webp 1200w" sizes="(max-width:980px) 100vw, 600px" width="1200" height="800" loading="lazy" alt="Il laboratorio di Officina Lario: banco di lavoro con ceramiche in corso e lini stampati"></figure>
   <div>
    <span class="eyebrow rv">La nostra storia</span>
    <h2 class="rv" style="--d:1">Nata da un tornio e da un <em>telaio</em> in cucina</h2>
@@ -312,8 +309,11 @@ footer a:hover{color:#fff;text-decoration:underline}
 
 <section class="ship" id="spedizioni">
  <div class="wrap">
-  <span class="eyebrow rv">Spedizioni e ritiro</span>
-  <h2 class="rv" style="--d:1">Arriva a casa, <em>intero</em></h2>
+  <div class="shiphead">
+   <div><span class="eyebrow rv">Spedizioni e ritiro</span>
+   <h2 class="rv" style="--d:1">Arriva a casa, <em>intero</em></h2></div>
+   <figure class="pack rv" style="--d:2"><img src="/img/d-negozio-imballaggio-S.webp" srcset="/img/d-negozio-imballaggio-S.webp 520w,/img/d-negozio-imballaggio-L.webp 900w" sizes="(max-width:980px) 300px, 340px" width="900" height="1125" loading="lazy" alt="Un ordine imballato in carta kraft e cordino, pronto per la spedizione"></figure>
+  </div>
   <div class="sg">
    <div class="sc2 rv"><span class="n">01</span><h3>Spedizione in Italia</h3><p>Imballo in carta e cartone riciclato, ceramiche protette una per una. Corriere tracciato con consegna in pochi giorni lavorativi.</p><p class="ln">Gratuita per ordini sopra 90 €</p></div>
    <div class="sc2 rv" style="--d:1"><span class="n">02</span><h3>Ritiro in bottega</h3><p>Ordini online e passi a ritirare quando vuoi, con un caffè sul lungolago. Ti avvisiamo appena il pacco è pronto.</p><p class="ln">Sempre gratuito</p></div>
@@ -364,32 +364,22 @@ footer a:hover{color:#fff;text-decoration:underline}
 (function(){
 "use strict";
 var RM=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-var IMG="/img/negozio-wide-1200.webp";
-/* fx,fy = punto focale sulla foto; z = zoom */
 var P=[
- {id:1,n:"Vaso Bianco Lago",c:"Ceramiche",m:"Ceramica smaltata a mano",p:48,fx:.40,fy:.68,z:3,bg:"#E9DCC4",t:"Novità",a:{fx:.4,fy:.5,z:4.5}},
- {id:2,n:"Ciotola Cobalto",c:"Ceramiche",m:"Gres smaltato, Ø 14 cm",p:26,fx:.73,fy:.75,z:4.5,bg:"#D5DDF3",t:"",a:{fx:.75,fy:.72,z:6}},
- {id:3,n:"Tovaglioli Onda, set da 4",c:"Tessuti",m:"Lino stampato a mano",p:38,fx:.90,fy:.66,z:3.5,bg:"#D5DDF3",t:"Best seller",a:{fx:.9,fy:.62,z:5}},
- {id:4,n:"Brocca Sabbia",c:"Ceramiche",m:"Gres naturale, 1,2 l",p:54,fx:.79,fy:.48,z:3.5,bg:"#EFD9A8",t:"",a:{fx:.79,fy:.44,z:5}},
- {id:5,n:"Ciotola Fiori Blu",c:"Ceramiche",m:"Decoro dipinto a mano",p:32,fx:.945,fy:.25,z:5,bg:"#F1D9D9",t:"Pezzo unico",a:{fx:.94,fy:.22,z:7}},
- {id:6,n:"Cesto di Rafia",c:"Casa",m:"Rafia intrecciata a mano",p:42,fx:.95,fy:.88,z:3.5,bg:"#EFD9A8",t:"",a:{fx:.94,fy:.9,z:5}},
- {id:7,n:"Tagliere di Ulivo",c:"Casa",m:"Legno d'ulivo, olio alimentare",p:36,fx:.84,fy:.56,z:3.5,bg:"#F1D9D9",t:"",a:{fx:.85,fy:.52,z:5}},
- {id:8,n:"Grembiule Sabbia",c:"Tessuti",m:"Lino lavato, taglia unica",p:64,fx:.66,fy:.52,z:3,bg:"#EFE3CE",t:"Novità",a:{fx:.66,fy:.58,z:4.5}}
+ {id:1,n:"Vaso",c:"Ceramiche Casa",m:"Ceramica smaltata a mano",p:48,f:"vaso",bg:"#E9DCC4",t:"Novità",alt:"Vaso in ceramica smaltata fatto a mano"},
+ {id:2,n:"Ciotola",c:"Ceramiche",m:"Gres smaltato, Ø 14 cm",p:26,f:"ciotola",bg:"#D5DDF3",t:"",alt:"Ciotola in gres smaltato"},
+ {id:3,n:"Piatti",c:"Ceramiche",m:"Set da 4 in gres, Ø 22 cm",p:72,f:"piatti",bg:"#EFD9A8",t:"Pezzo unico",alt:"Set di piatti in ceramica fatti a mano"},
+ {id:4,n:"Tovaglia in lino",c:"Tessuti",m:"Lino stampato a mano",p:68,f:"tovaglia",bg:"#D5DDF3",t:"Best seller",alt:"Tovaglia in lino stampata a mano"},
+ {id:5,n:"Cuscino tessuto a mano",c:"Tessuti Casa",m:"Cotone e lino, 45 x 45 cm",p:42,f:"cuscino",bg:"#F1D9D9",t:"",alt:"Cuscino in tessuto lavorato a mano"},
+ {id:6,n:"Brocca e bicchieri",c:"Ceramiche Casa",m:"Brocca in gres 1,2 l con 2 bicchieri",p:54,f:"brocca",bg:"#EFE3CE",t:"Novità",alt:"Brocca in ceramica con bicchieri"}
 ];
-function pos(f){/* fx,fy,z -> background-position su riquadro quadrato */
- var wx=1/f.z,wy=1.5/f.z;
- var x=(f.fx-wx/2)/(1-wx),y=(f.fy-wy/2)/(1-wy);
- x=Math.max(0,Math.min(1,x));y=Math.max(0,Math.min(1,y));
- return "background-image:url("+IMG+");background-size:"+(f.z*100)+"% auto;background-position:"+(x*100).toFixed(1)+"% "+(y*100).toFixed(1)+"%";
-}
+function src(p,w){return "/img/d-negozio-"+p.f+"-"+w+".webp"}
 function eur(n){return n.toFixed(2).replace(".",",")+" €"}
 var $=function(s){return document.querySelector(s)};
 var grid=$("#grid");
 grid.innerHTML=P.map(function(p,i){
  return '<article class="card rv" data-c="'+p.c+'" style="--d:'+(i%4)+';--c:'+p.bg+'">'+
  (p.t?'<span class="tag">'+p.t+'</span>':'')+'<div class="ph">'+
- '<div class="l a" style="'+pos(p)+'" role="img" aria-label="'+p.n+', '+p.m+'"></div>'+
- '<div class="l b" style="'+pos(p.a)+'" aria-hidden="true"></div></div>'+
+ '<img src="'+src(p,"S")+'" srcset="'+src(p,"S")+' 480w,'+src(p,"L")+' 900w" sizes="(max-width:980px) 50vw, 400px" width="900" height="900" loading="lazy" alt="'+p.alt+'"></div>'+
  '<h3>'+p.n+'</h3><p class="m">'+p.m+'</p>'+
  '<div class="row"><span class="price">'+eur(p.p)+'</span><button class="add" type="button" data-id="'+p.id+'" aria-label="Aggiungi al carrello: '+p.n+'">Aggiungi</button></div></article>';
 }).join("");
@@ -399,7 +389,8 @@ var one=words.map(function(w){return "<span>"+w+"</span>"}).join("");
 $("#mq").innerHTML=one+one+one+one;
 /* reveal */
 var io=null;
-if("IntersectionObserver" in window&&!RM){
+var MOCK=/[?&]mock/.test(location.search);
+if("IntersectionObserver" in window&&!RM&&!MOCK){
  io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 }else document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")});
@@ -421,7 +412,7 @@ $("#filters").addEventListener("click",function(e){
  setTimeout(function(){
   var k=0;
   cards.forEach(function(c){
-   var show=f==="tutti"||c.dataset.c===f;
+   var show=f==="tutti"||c.dataset.c.split(" ").indexOf(f)>-1;
    c.hidden=!show;
    if(show){c.classList.add("in");c.style.setProperty("--d",k++)}
   });
@@ -436,7 +427,7 @@ function render(){
  var ids=Object.keys(cart),n=0,tot=0;
  items.innerHTML=ids.length?ids.map(function(id){
   var p=byId(id),q=cart[id];n+=q;tot+=q*p.p;
-  return '<li class="it"><div class="th" role="img" aria-label="'+p.n+'" style="background-color:'+p.bg+';'+pos({fx:p.fx,fy:p.fy,z:p.z})+'"></div>'+
+  return '<li class="it"><img class="th" src="'+src(p,"S")+'" srcset="'+src(p,"S")+' 480w,'+src(p,"L")+' 900w" sizes="72px" width="900" height="900" loading="lazy" alt="'+p.alt+'">'+
   '<div><b>'+p.n+'</b><small>'+eur(p.p)+'</small><div class="q"><button data-a="-" data-id="'+id+'" aria-label="Diminuisci quantità di '+p.n+'">&minus;</button><span aria-live="polite">'+q+'</span><button data-a="+" data-id="'+id+'" aria-label="Aumenta quantità di '+p.n+'">+</button></div></div>'+
   '<button class="rm" data-a="x" data-id="'+id+'" aria-label="Rimuovi '+p.n+'">Rimuovi</button></li>';
  }).join(""):'<li class="empty"><b>Il carrello è vuoto</b>Sfoglia il negozio e scegli qualcosa di bello.</li>';
@@ -479,7 +470,7 @@ document.addEventListener("keydown",function(e){
 $("#checkout").addEventListener("click",function(){$("#done").classList.add("on");setTimeout(function(){$("#doneBtn").focus()},50)});
 $("#doneBtn").addEventListener("click",function(){cart={};render();close()});
 render();
-$("#ubgx").addEventListener("click",function(){$("#ubg").style.display="none"});
+if(MOCK)$("#ubg").remove();else $("#ubgx").addEventListener("click",function(){$("#ubg").style.display="none"});
 })();
 </script>
 </body>

@@ -7,6 +7,8 @@
 <meta name="description" content="Studio associato di architettura e consulenza tecnica sul Lago di Como e a Lecco: progetto, pratiche edilizie, perizie e direzione lavori. Primo colloquio su appuntamento.">
 <meta name="robots" content="noindex,follow">
 <meta name="theme-color" content="#0f1b2d">
+<script>if(/[?&]mock/.test(location.search))document.documentElement.className+=" mock"</script>
+<link rel="preload" as="image" href="/img/studio-900.webp" imagesrcset="/img/studio-600.webp 600w,/img/studio-900.webp 900w" imagesizes="(max-width:980px) 90vw,440px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,6 +91,8 @@ h2 em{font-style:italic;color:var(--brass-d)}
 .asym{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px}
 .asym aside{position:sticky;top:110px;align-self:start}
 .asym aside p{margin-top:24px;color:var(--mute);max-width:24em}
+.asym aside figure{margin-top:36px;max-width:300px}
+.asym aside figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .uline{position:relative;display:inline}
 .uline{background:linear-gradient(var(--brass),var(--brass)) 0 92%/0 1px no-repeat;transition:background-size 1.4s .3s var(--ease)}
 .in-view .uline,.uline.in-view{background-size:100% 1px}
@@ -122,6 +126,7 @@ h2 em{font-style:italic;color:var(--brass-d)}
 .step{padding:36px 36px 8px 0;position:relative}
 .step+.step{padding-left:36px;border-left:1px solid rgba(246,241,231,.15)}
 .step:nth-child(2){margin-top:44px}.step:nth-child(3){margin-top:88px}
+.step .ph{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:24px;background:var(--navy2)}
 .step .k{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--brass-l)}
 .step h3{font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.15;margin:10px 0 14px}
 .step p{color:rgba(246,241,231,.78);font-size:.98rem}
@@ -164,8 +169,11 @@ legend,label.l{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;co
 
 /* sede */
 .sede{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:center}
-.sede figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.sede .imgs{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:end}
 .sede figure{overflow:hidden}
+.sede figure img{width:100%;object-fit:cover}
+.sede figure:first-child img{aspect-ratio:1/1}
+.sede figure:last-child img{aspect-ratio:4/5}
 .sede figure img{transition:transform 1.6s var(--ease)}.sede figure:hover img{transform:scale(1.03)}
 address{font-style:normal;font-family:var(--serif);font-size:1.5rem;line-height:1.4;color:var(--navy);margin:28px 0}
 .hours{width:100%;border-collapse:collapse;font-size:.95rem}
@@ -230,6 +238,12 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
   .acc-panel ul{grid-template-columns:1fr}
   .book .photo img:last-child{transform:none}
 }
+/* modalità mockup */
+.mock .ubg-tag,.mock .cur{display:none}
+.mock .rv,.mock .hl{opacity:1;transform:none;animation:none;transition:none}
+.mock .arch .mask{clip-path:none;animation:none}.mock .arch img{transform:none;animation:none}.mock .arch::after{opacity:1;animation:none}
+.mock .uline{background-size:100% 1px;transition:none}
+.mock .snum{transition:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}
@@ -289,6 +303,7 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
       <span class="snum" data-lit>01</span>
       <h2 id="h-aree" style="margin-top:22px">Aree di <em class="uline">attività</em></h2>
       <p>Quattro materie, un unico metodo. Ogni incarico ha un socio responsabile e un preventivo scritto prima di iniziare.</p>
+      <figure><img src="/img/d-studio-libreria-L.webp" srcset="/img/d-studio-libreria-S.webp 520w,/img/d-studio-libreria-L.webp 900w" sizes="(max-width:980px) 60vw,300px" width="900" height="1125" alt="Libreria dello studio con volumi di architettura, norme e cataloghi di materiali" loading="lazy"></figure>
     </aside>
     <div class="acc rv" style="--d:.15s">
       <div class="acc-item">
@@ -322,9 +337,9 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
       <p class="rv" style="max-width:26em;color:rgba(246,241,231,.75)">Tre passi, sempre gli stessi. Sapere cosa succede e quando è la prima forma di rispetto per il cliente.</p>
     </div>
     <div class="steps">
-      <article class="step rv"><span class="k">Primo passo</span><h3>Ascolto e sopralluogo</h3><p>Ascoltiamo esigenze, budget e vincoli, poi visitiamo l'immobile. Al termine ricevete una nota scritta con fattibilità, rischi e tempi.</p><p class="d">Entro 7 giorni dal colloquio</p></article>
-      <article class="step rv" style="--d:.15s"><span class="k">Secondo passo</span><h3>Proposta e preventivo</h3><p>Una proposta tecnica chiara, con onorario definito per fasi. Nessuna voce a sorpresa: ciò che approvate è ciò che pagate.</p><p class="d">Preventivo scritto e vincolante</p></article>
-      <article class="step rv" style="--d:.3s"><span class="k">Terzo passo</span><h3>Progetto e cantiere</h3><p>Sviluppo, pratiche e direzione lavori con un socio responsabile. Aggiornamenti a cadenza fissa, documenti sempre consultabili.</p><p class="d">Un referente, dall'inizio alla fine</p></article>
+      <article class="step rv"><img class="ph" src="/img/d-studio-scrivania-S.webp" srcset="/img/d-studio-scrivania-S.webp 700w,/img/d-studio-scrivania-L.webp 1200w" sizes="(max-width:980px) 92vw,360px" width="1200" height="800" alt="Scrivania di lavoro con planimetrie, scala metrica e appunti del sopralluogo" loading="lazy"><span class="k">Primo passo</span><h3>Ascolto e sopralluogo</h3><p>Ascoltiamo esigenze, budget e vincoli, poi visitiamo l'immobile. Al termine ricevete una nota scritta con fattibilità, rischi e tempi.</p><p class="d">Entro 7 giorni dal colloquio</p></article>
+      <article class="step rv" style="--d:.15s"><img class="ph" src="/img/d-studio-plastico-S.webp" srcset="/img/d-studio-plastico-S.webp 480w,/img/d-studio-plastico-L.webp 900w" sizes="(max-width:980px) 92vw,360px" width="900" height="900" alt="Plastico di studio di un edificio sul tavolo di lavoro" loading="lazy"><span class="k">Secondo passo</span><h3>Proposta e preventivo</h3><p>Una proposta tecnica chiara, con onorario definito per fasi. Nessuna voce a sorpresa: ciò che approvate è ciò che pagate.</p><p class="d">Preventivo scritto e vincolante</p></article>
+      <article class="step rv" style="--d:.3s"><img class="ph" src="/img/d-studio-cantiere-S.webp" srcset="/img/d-studio-cantiere-S.webp 700w,/img/d-studio-cantiere-L.webp 1200w" sizes="(max-width:980px) 92vw,360px" width="1200" height="800" alt="Cantiere di ristrutturazione in corso con il direttore dei lavori" loading="lazy"><span class="k">Terzo passo</span><h3>Progetto e cantiere</h3><p>Sviluppo, pratiche e direzione lavori con un socio responsabile. Aggiornamenti a cadenza fissa, documenti sempre consultabili.</p><p class="d">Un referente, dall'inizio alla fine</p></article>
     </div>
   </div>
 </section>
@@ -336,8 +351,8 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
       <h2 id="h-coll" style="margin-top:22px">Il primo <em class="uline">colloquio</em></h2>
       <p style="margin-top:24px;color:var(--mute);max-width:26em">Trenta minuti per capire se e come possiamo esservi utili. Nessun costo, nessun impegno: indicate la materia e una data, vi confermiamo entro un giorno lavorativo.</p>
       <div class="photo">
-        <img src="/img/studio-dettaglio-700.webp" width="700" height="700" alt="Dettaglio di una scrivania di studio con matite, scala metrica e disegni" loading="lazy">
-        <img src="/img/studio-600.webp" width="600" height="750" alt="Interno dello studio con librerie e tavoli da disegno" loading="lazy">
+        <img src="/img/d-studio-firma-S.webp" srcset="/img/d-studio-firma-S.webp 480w,/img/d-studio-firma-L.webp 900w" sizes="(max-width:980px) 45vw,280px" width="900" height="900" alt="Firma di un incarico su un tavolo di studio, penna e documenti" loading="lazy">
+        <img src="/img/d-studio-materiali-S.webp" srcset="/img/d-studio-materiali-S.webp 480w,/img/d-studio-materiali-L.webp 900w" sizes="(max-width:980px) 45vw,280px" width="900" height="900" alt="Campioni di materiali e finiture selezionati per un progetto" loading="lazy">
       </div>
     </div>
     <div class="rv" style="--d:.15s">
@@ -376,7 +391,10 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
 
 <section class="sec dark" id="sede" aria-labelledby="h-sede">
   <div class="wrap sede">
-    <figure class="rv"><img src="/img/studio-wide-1200.webp" srcset="/img/studio-wide-700.webp 700w,/img/studio-wide-1200.webp 1200w" sizes="(max-width:980px) 92vw,600px" width="1200" height="800" alt="Ambiente di lavoro dello studio con grandi finestre e tavolo condiviso" loading="lazy"></figure>
+    <div class="imgs rv">
+      <figure><img src="/img/d-studio-sala-riunioni-S.webp" srcset="/img/d-studio-sala-riunioni-S.webp 700w,/img/d-studio-sala-riunioni-L.webp 1200w" sizes="(max-width:980px) 55vw,360px" width="1200" height="800" alt="Sala riunioni dello studio con tavolo lungo e grandi finestre" loading="lazy"></figure>
+      <figure><img src="/img/d-studio-ingresso-S.webp" srcset="/img/d-studio-ingresso-S.webp 520w,/img/d-studio-ingresso-L.webp 900w" sizes="(max-width:980px) 40vw,240px" width="900" height="1125" alt="Ingresso dello studio in via dei Tigli a Lecco" loading="lazy"></figure>
+    </div>
     <div class="rv" style="--d:.15s">
       <span class="snum" data-lit>04</span>
       <h2 id="h-sede" style="margin-top:22px">Sede e <em class="uline">orari</em></h2>
@@ -417,6 +435,7 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
 
 <script>
 (function(){
+  var mock=/[?&]mock/.test(location.search);
   var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
   /* header */
@@ -433,6 +452,7 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
   $$('.uline').forEach(function(n){io.observe(n)});
   var nio=new IntersectionObserver(function(en){en.forEach(function(e){e.target.classList.toggle('lit',e.isIntersecting)})},{rootMargin:'-35% 0px -35% 0px'});
   $$('[data-lit]').forEach(function(n){nio.observe(n)});
+  if(mock){$$('.rv,.uline').forEach(function(n){n.classList.add('in-view')});$$('[data-lit]').forEach(function(n){n.classList.add('lit')})}
   /* accordion */
   $$('.acc-btn').forEach(function(b){b.addEventListener('click',function(){
     var open=b.getAttribute('aria-expanded')==='true';
@@ -441,7 +461,7 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
   })});
   /* cursore discreto */
   var cu=$('.cur');
-  if(!rm&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  if(!mock&&!rm&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
     var x=0,y=0,tx=0,ty=0,run=false;
     function loop(){x+=(tx-x)*.18;y+=(ty-y)*.18;cu.style.transform='translate3d('+x+'px,'+y+'px,0)';if(Math.abs(tx-x)+Math.abs(ty-y)>.3)requestAnimationFrame(loop);else run=false}
     window.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;cu.classList.add('vis');if(!run){run=true;requestAnimationFrame(loop)}},{passive:true});
@@ -466,6 +486,7 @@ footer .fn{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
   });
   $('#again').addEventListener('click',function(){f.reset();d.value=iso(t);$('#confirm').classList.remove('show');$('#formBody').style.display='';});
   /* etichetta */
+  if(mock){$('#ubgTag').style.display='none'}
   $('#ubgX').addEventListener('click',function(){$('#ubgTag').style.display='none'});
 })();
 </script>
